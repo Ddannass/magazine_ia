@@ -401,14 +401,17 @@
 
     .huge{
       margin:0 0 16px;
-      font-size:clamp(1.95rem, 7vw, 4.4rem);
-      line-height:.95;
-      font-weight:800;
+      font-family:"Didot","Bodoni 72","Bodoni MT","Playfair Display",Georgia,serif;
+      font-size:clamp(1.7rem, 6.5vw, 4.4rem);
+      line-height:.98;
+      font-weight:700;
       text-transform:uppercase;
-      letter-spacing:.04em;
+      letter-spacing:.02em;
       color:#201613;
       text-align:left;
       text-wrap:balance;
+      overflow-wrap:break-word;
+      word-break:break-word;
     }
 
     /* ======= Интерактивная открытка от коллектива ======= */
@@ -1373,6 +1376,11 @@
 
       h1{ font-size:clamp(2.1rem, 9.5vw, 6rem); }
       h2{ font-size:clamp(1.7rem, 7.5vw, 3.5rem); }
+      .huge{ font-size:clamp(1.4rem, 7.5vw, 4.4rem); letter-spacing:0; }
+
+      .quote-screen{
+        padding:18px 14px;
+      }
 
       .hero{
         min-height:68svh;
