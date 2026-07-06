@@ -1,0 +1,2319 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Ирина Александровна — специальный выпуск</title>
+
+  <style>
+    :root{
+      --bg:#f7f1ea;
+      --bg-soft:#efe5da;
+      --paper:#fffaf5;
+      --paper-glass:rgba(255,250,245,.88);
+      --card:rgba(255,253,250,.96);
+      --ink:#241a16;
+      --muted:#6d6057;
+      --line:rgba(76,48,33,.10);
+      --accent:#7a1e2a;
+      --accent-dark:#5a1620;
+      --gold:#b8923d;
+      --wine:#5a1620;
+      --green:#6c8b61;
+      --shadow:0 18px 40px rgba(48,28,18,.08);
+      --shadow-soft:0 10px 24px rgba(48,28,18,.05);
+      --radius-xl:32px;
+      --radius-lg:24px;
+      --radius-md:18px;
+      --content:1180px;
+    }
+
+    *{box-sizing:border-box}
+
+    html{
+      scroll-behavior:smooth;
+      -webkit-text-size-adjust:100%;
+    }
+
+    body{
+      margin:0;
+      font-family:"Iowan Old Style","Palatino","Book Antiqua",Georgia,"Times New Roman",serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(184,146,61,.16), transparent 26%),
+        radial-gradient(circle at top right, rgba(122,30,42,.12), transparent 24%),
+        linear-gradient(180deg, #fbf7f2 0%, #f2eae1 100%);
+      line-height:1.72;
+      overflow-x:hidden;
+    }
+
+    img{
+      display:block;
+      max-width:100%;
+      height:auto;
+      border-radius:22px;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .page{
+      width:min(calc(100% - 14px), 1380px);
+      margin:0 auto;
+      padding:10px 0 42px;
+    }
+
+    .topbar{
+      position:sticky;
+      top:6px;
+      z-index:30;
+      width:min(100%, var(--content));
+      margin:0 auto 10px;
+      padding:6px 12px;
+      border-radius:999px;
+      border:1px solid rgba(76,48,33,.08);
+      background:rgba(255,250,245,.78);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      box-shadow:var(--shadow-soft);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+
+    .brand{
+      font-size:.62rem;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:#4a3a31;
+      white-space:nowrap;
+    }
+
+    .nav{
+      display:flex;
+      flex-wrap:nowrap;
+      gap:2px;
+      justify-content:flex-end;
+    }
+
+    .nav a{
+      padding:4px 8px;
+      border-radius:999px;
+      font-size:.7rem;
+      color:#5c4c42;
+      transition:.25s ease;
+      white-space:nowrap;
+    }
+
+    .nav a:hover,
+    .nav a:active{
+      background:rgba(122,30,42,.10);
+      color:#2f221d;
+    }
+
+    .spread{
+      width:min(100%, var(--content));
+      margin:0 auto 14px;
+      position:relative;
+      overflow:hidden;
+      border-radius:var(--radius-xl);
+      border:1px solid rgba(76,48,33,.08);
+      background:var(--paper-glass);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+    }
+
+    .spread::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.24), transparent 14%, transparent 88%, rgba(122,30,42,.05));
+    }
+
+    .spread > *{
+      position:relative;
+      z-index:1;
+    }
+
+    .pad{
+      padding-left:clamp(18px, 4vw, 56px);
+      padding-right:clamp(18px, 4vw, 56px);
+    }
+
+    .section{
+      padding-top:48px;
+      padding-bottom:34px;
+    }
+
+    .section-no{
+      position:absolute;
+      top:16px;
+      right:18px;
+      font-family:"Didot","Bodoni 72","Bodoni MT","Playfair Display",Georgia,serif;
+      font-size:32px;
+      font-weight:700;
+      color:rgba(122,30,42,.42);
+      line-height:1;
+    }
+
+    .kicker{
+      display:inline-block;
+      margin-bottom:12px;
+      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-size:.77rem;
+      font-weight:800;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--accent);
+    }
+
+    h1,h2,h3{
+      margin:0 0 14px;
+      font-family:"Didot","Bodoni 72","Bodoni MT","Playfair Display",Georgia,serif;
+      color:#231814;
+      line-height:1;
+      font-weight:700;
+      text-wrap:balance;
+    }
+
+    h1{font-size:clamp(2.7rem, 8vw, 6rem)}
+    h2{font-size:clamp(2rem, 5vw, 3.5rem)}
+    h3{font-size:clamp(1.35rem, 3vw, 2rem); line-height:1.08}
+
+    p,
+    li,
+    .card p,
+    .wish-panel p,
+    .subtitle,
+    .lead,
+    .intro{
+      margin:0 0 15px;
+      font-size:1rem;
+      color:var(--ink);
+      text-align:justify;
+      text-align-last:left;
+      hyphens:auto;
+      -webkit-hyphens:auto;
+      overflow-wrap:break-word;
+      word-break:normal;
+    }
+
+    .lead,
+    .subtitle,
+    .intro{
+      font-size:1.08rem;
+      color:#40342d;
+    }
+
+    .hero{
+      min-height:72svh;
+      display:flex;
+      align-items:flex-end;
+      padding-top:90px;
+      padding-bottom:36px;
+      background:
+        linear-gradient(180deg, rgba(33,21,17,.10), rgba(33,21,17,.28)),
+        radial-gradient(circle at top right, rgba(255,236,220,.28), transparent 40%),
+        linear-gradient(135deg, #EABC78 0%, #550A00 100%);
+      color:#fff;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:24px;
+      align-items:end;
+      width:100%;
+    }
+
+    .hero-copy .kicker,
+    .hero-copy h1,
+    .hero-copy p{
+      color:#fff;
+      text-align:left;
+      text-align-last:left;
+    }
+
+    .hero-visual{
+      display:grid;
+      gap:12px;
+      justify-items:center;
+    }
+
+    .hero-visual img{
+      width:auto;
+      max-width:100%;
+      height:auto;
+      max-height:520px;
+      display:block;
+      box-shadow:var(--shadow-soft);
+      border-radius:8px;
+    }
+
+    .mini-caption{
+      font-size:.78rem;
+      line-height:1.55;
+      color:rgba(255,255,255,.86);
+      text-transform:uppercase;
+      letter-spacing:.12em;
+    }
+
+    .editorial-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .stack{
+      display:grid;
+      gap:18px;
+    }
+
+    .card{
+      padding:22px 18px;
+      border-radius:24px;
+      border:1px solid rgba(76,48,33,.08);
+      background:var(--card);
+      box-shadow:var(--shadow-soft);
+    }
+
+    .soft{
+      background:linear-gradient(180deg, rgba(255,255,255,.72), rgba(243,233,224,.82));
+    }
+
+    .dropcap::first-letter{
+      float:left;
+      font-family:"Didot","Bodoni 72","Bodoni MT","Playfair Display",Georgia,serif;
+      font-size:4.5rem;
+      line-height:.82;
+      padding-right:10px;
+      color:var(--accent);
+      font-weight:700;
+    }
+
+    .quote-card{
+      padding:24px 20px;
+      border-radius:26px;
+      background:linear-gradient(135deg, rgba(122,30,42,.10), rgba(184,146,61,.14));
+      border:1px solid rgba(122,30,42,.10);
+      box-shadow:var(--shadow-soft);
+    }
+
+    .quote-card p{
+      margin:0;
+      font-family:"Didot","Bodoni 72","Bodoni MT","Playfair Display",Georgia,serif;
+      font-size:1.6rem;
+      line-height:1.18;
+      text-align:left;
+    }
+
+    .side-image{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      width:fit-content;
+      max-width:420px;
+      margin:0 auto;
+      border-radius:26px;
+      border:1px solid rgba(76,48,33,.08);
+      box-shadow:var(--shadow-soft);
+      background:var(--card);
+      overflow:hidden;
+    }
+
+    .side-image img{
+      width:auto;
+      max-width:100%;
+      height:auto;
+      max-height:640px;
+      display:block;
+    }
+
+    .side-note{
+      width:100%;
+      box-sizing:border-box;
+      padding:14px 16px;
+      font-size:.9rem;
+      color:var(--muted);
+      text-align:left;
+      border-top:1px solid rgba(76,48,33,.08);
+      background:rgba(255,255,255,.74);
+    }
+
+    .traits{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .trait{
+      padding:16px;
+      border-radius:20px;
+      border:1px solid rgba(76,48,33,.08);
+      background:rgba(255,255,255,.82);
+      box-shadow:var(--shadow-soft);
+    }
+
+    .trait strong{
+      display:block;
+      margin-bottom:8px;
+      font-size:.92rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:#5d493e;
+    }
+
+    .quote-screen{
+      margin-top:18px;
+      padding:22px 20px;
+      border-radius:26px;
+      border:1px solid rgba(76,48,33,.08);
+      background:rgba(255,255,255,.76);
+      box-shadow:var(--shadow-soft);
+    }
+
+    .quote-screen.dark{
+      background:linear-gradient(135deg, #2c1d1b, #53342f);
+    }
+
+    .quote-screen.dark .huge,
+    .quote-screen.dark p{
+      color:#fff;
+    }
+
+    .quote-screen.accent{
+      background:linear-gradient(135deg, rgba(122,30,42,.14), rgba(184,146,61,.18));
+    }
+
+    .huge{
+      margin:0 0 16px;
+      font-size:clamp(1.95rem, 7vw, 4.4rem);
+      line-height:.95;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+      color:#201613;
+      text-align:left;
+      text-wrap:balance;
+    }
+
+    /* ======= Интерактивная открытка от коллектива ======= */
+    .card-section{
+      background:
+        radial-gradient(circle at 20% 20%, rgba(184,146,61,.10), transparent 55%),
+        radial-gradient(circle at 80% 80%, rgba(122,30,42,.08), transparent 55%),
+        linear-gradient(180deg, #efe4cb 0%, #e9dcc0 100%);
+      padding:70px 0 80px;
+      text-align:center;
+    }
+    .card-section .kicker{ display:inline-block; margin-bottom:14px; }
+    .card-section h2{ text-align:center; margin-bottom:8px; }
+    .card-section .card-intro{
+      max-width:520px;
+      margin:0 auto 40px;
+      font-style:italic;
+      color:var(--muted);
+      font-size:1rem;
+    }
+
+    .postcard-scene{
+      perspective:2200px;
+      max-width:500px;
+      margin:0 auto;
+      padding:0 24px;
+    }
+    .postcard{
+      position:relative;
+      width:100%;
+      aspect-ratio: 3 / 4;
+      transform-style:preserve-3d;
+      -webkit-transform-style:preserve-3d;
+      transition:transform 1.4s cubic-bezier(.68,-0.15,.27,1.15);
+      cursor:pointer;
+      -webkit-tap-highlight-color:transparent;
+    }
+    .postcard:not(.open){ animation: pcHint 3.5s ease-in-out infinite; }
+    @keyframes pcHint{
+      0%, 100% { transform: rotateY(0deg); }
+      50% { transform: rotateY(-6deg); }
+    }
+    .postcard.open{
+      transform:rotateY(-180deg);
+      animation:none;
+    }
+    .postcard-face{
+      position:absolute;
+      inset:0;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      padding:36px 26px;
+      border-radius:4px;
+      box-shadow:0 30px 60px rgba(48,28,18,.25);
+      backface-visibility:hidden;
+      -webkit-backface-visibility:hidden;
+      overflow:hidden;
+    }
+    .postcard-cover{
+      background:
+        radial-gradient(circle at 50% 30%, rgba(184,146,61,.18), transparent 55%),
+        linear-gradient(160deg, #7a1e2a 0%, #4a1219 100%);
+      color:#f3e9d2;
+      border:1px solid rgba(184,146,61,.55);
+    }
+    .postcard-cover::before{
+      content:'';
+      position:absolute;
+      inset:14px;
+      border:1px solid rgba(184,146,61,.4);
+      pointer-events:none;
+    }
+    .postcard-cover .pc-eyebrow{
+      font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+      font-size:.68rem;
+      letter-spacing:.35em;
+      text-transform:uppercase;
+      color:#d4b062;
+      margin-bottom:24px;
+    }
+    .postcard-cover .pc-name{
+      font-family:"Didot","Bodoni 72","Playfair Display",Georgia,serif;
+      font-size:clamp(1.7rem, 6vw, 2.3rem);
+      font-style:italic;
+      line-height:1;
+      color:#f3e9d2;
+      margin-bottom:6px;
+    }
+    .postcard-cover .pc-surname{
+      font-family:"Didot","Bodoni 72","Playfair Display",Georgia,serif;
+      font-size:clamp(1.1rem, 4vw, 1.4rem);
+      letter-spacing:.35em;
+      color:#d4b062;
+      text-transform:uppercase;
+      margin-bottom:26px;
+    }
+    .postcard-cover .pc-flourish{
+      font-size:24px;
+      color:#d4b062;
+      margin:6px 0 26px;
+    }
+    .postcard-cover .pc-flourish::before,
+    .postcard-cover .pc-flourish::after{
+      content:'';
+      display:inline-block;
+      width:36px;
+      height:1px;
+      background:#d4b062;
+      vertical-align:middle;
+      margin:0 12px;
+    }
+    .postcard-cover .pc-hint{
+      font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+      font-size:.62rem;
+      letter-spacing:.3em;
+      text-transform:uppercase;
+      color:rgba(212,176,98,.85);
+      animation: pcHintPulse 2s ease-in-out infinite;
+    }
+    @keyframes pcHintPulse{
+      0%, 100% { opacity: .55; }
+      50% { opacity: 1; }
+    }
+    /* Угловые виньетки на обложке */
+    .postcard-cover .pc-corner{
+      position:absolute;
+      width:34px;
+      height:34px;
+      color:#d4b062;
+    }
+    .postcard-cover .pc-corner.tl{ top:20px; left:20px; }
+    .postcard-cover .pc-corner.tr{ top:20px; right:20px; transform:scaleX(-1); }
+    .postcard-cover .pc-corner.bl{ bottom:20px; left:20px; transform:scaleY(-1); }
+    .postcard-cover .pc-corner.br{ bottom:20px; right:20px; transform:scale(-1,-1); }
+
+    .postcard-inside{
+      background:
+        radial-gradient(circle at 50% 0%, rgba(184,146,61,.10), transparent 40%),
+        linear-gradient(160deg, #faf3e0 0%, #f3e9d2 100%);
+      color:#2b1f1a;
+      border:1px solid rgba(184,146,61,.45);
+      transform:rotateY(180deg);
+      -webkit-transform:rotateY(180deg);
+      padding:32px 26px;
+      justify-content:flex-start;
+    }
+    .postcard-inside::before{
+      content:'';
+      position:absolute;
+      inset:14px;
+      border:1px solid rgba(184,146,61,.4);
+      pointer-events:none;
+    }
+    .postcard-inside .pi-greeting{
+      font-family:"Didot","Bodoni 72","Playfair Display",Georgia,serif;
+      font-style:italic;
+      font-size:clamp(1.2rem, 4.5vw, 1.5rem);
+      color:#5a1620;
+      margin-top:14px;
+      margin-bottom:14px;
+      text-align:center;
+    }
+    .postcard-inside .pi-text{
+      font-family:"Iowan Old Style","Palatino",Georgia,serif;
+      font-size:.9rem;
+      line-height:1.55;
+      text-align:center;
+      color:#2b1f1a;
+      margin:0 0 12px;
+      max-width:280px;
+      opacity:0;
+      transform:translateY(8px);
+      transition:opacity .7s ease, transform .7s ease;
+    }
+    .postcard.open .postcard-inside .pi-text{ opacity:1; transform:translateY(0); }
+    .postcard.open .postcard-inside .pi-text:nth-of-type(1){ transition-delay:.9s; }
+    .postcard.open .postcard-inside .pi-text:nth-of-type(2){ transition-delay:1.15s; }
+    .postcard.open .postcard-inside .pi-text:nth-of-type(3){ transition-delay:1.4s; }
+
+    .postcard-inside .pi-signoff{
+      font-family:"Didot","Bodoni 72","Playfair Display",Georgia,serif;
+      font-size:clamp(1.4rem, 5vw, 1.8rem);
+      color:#5a1620;
+      margin-top:14px;
+      letter-spacing:.01em;
+      opacity:0;
+      transform:translateY(8px);
+      transition:opacity .7s ease .95s, transform .7s ease .95s;
+    }
+    .postcard.open .postcard-inside .pi-signoff{ opacity:1; transform:translateY(0); }
+    .postcard-inside .pi-signature{
+      font-family:"Didot","Bodoni 72","Playfair Display",Georgia,serif;
+      font-style:italic;
+      font-size:.95rem;
+      color:#7a1e2a;
+      margin-top:8px;
+      opacity:0;
+      transition:opacity .7s ease 1.2s;
+    }
+    .postcard.open .postcard-inside .pi-signature{ opacity:1; }
+
+    /* Декоративная виньетка сверху внутренней стороны */
+    .pi-vignette{
+      width:180px;
+      height:26px;
+      margin:8px auto 12px;
+      display:block;
+      opacity:0;
+      transform:translateY(-6px);
+      transition:opacity .6s ease .6s, transform .6s ease .6s;
+    }
+    .postcard.open .pi-vignette{ opacity:1; transform:translateY(0); }
+
+    /* Круглая печать с датой */
+    .pi-seal{
+      position:absolute;
+      right:22px;
+      bottom:22px;
+      width:96px;
+      height:96px;
+      border-radius:50%;
+      border:1.5px solid #b8923d;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:3px;
+      color:#7a1e2a;
+      background:radial-gradient(circle, rgba(184,146,61,.10), transparent 70%);
+      transform:rotate(-6deg) scale(0);
+      opacity:0;
+      transition:transform .8s cubic-bezier(.5,-0.5,.3,1.5) 1.5s, opacity .5s ease 1.5s;
+    }
+    .postcard.open .pi-seal{ transform:rotate(-6deg) scale(1); opacity:.9; }
+    .pi-seal::before{
+      content:'';
+      position:absolute;
+      inset:5px;
+      border-radius:50%;
+      border:.5px solid #b8923d;
+    }
+    .pi-seal .seal-star{ color:#b8923d; font-size:9px; line-height:1; }
+    .pi-seal .seal-date{
+      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif;
+      line-height:1.1;
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+    .pi-seal .seal-date b{
+      display:block;
+      font-size:.82rem;
+      font-weight:600;
+      letter-spacing:0;
+    }
+    .pi-seal .seal-date span{
+      font-size:.62rem;
+      font-weight:500;
+      letter-spacing:.12em;
+      margin-top:1px;
+    }
+
+    /* Золотые точки-конфетти */
+    .pi-spark{
+      position:absolute;
+      width:6px;
+      height:6px;
+      border-radius:50%;
+      background:#d4b062;
+      box-shadow:0 0 6px rgba(212,176,98,.7);
+      opacity:0;
+      pointer-events:none;
+    }
+    .postcard.open .pi-spark{ animation: piFall 2s ease-out forwards; }
+    .pi-spark.s1{ left:20%; animation-delay:1.1s; }
+    .pi-spark.s2{ left:45%; animation-delay:1.4s; }
+    .pi-spark.s3{ left:70%; animation-delay:1.25s; }
+    .pi-spark.s4{ left:85%; animation-delay:1.55s; }
+    .pi-spark.s5{ left:10%; animation-delay:1.7s; }
+    @keyframes piFall{
+      0%   { top:-10px; opacity:0; }
+      15%  { opacity:1; }
+      100% { top:calc(100% + 20px); opacity:0; }
+    }
+
+    .card-section .card-hint{
+      margin-top:26px;
+      font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+      font-size:.75rem;
+      letter-spacing:.28em;
+      text-transform:uppercase;
+      color:var(--accent);
+      opacity:.7;
+    }
+
+    /* ======= Сотрудники говорят — карусель ======= */
+    .voices{
+      background:
+        radial-gradient(circle at 15% 10%, rgba(184,146,61,.10), transparent 45%),
+        radial-gradient(circle at 85% 90%, rgba(122,30,42,.07), transparent 45%),
+        linear-gradient(180deg, #f5ece2 0%, #efe4cb 100%);
+      padding-bottom:10px;
+    }
+    .voices .voices-lead{
+      max-width:520px;
+      margin:0 0 32px;
+      font-style:italic;
+      color:var(--muted);
+      font-size:1.02rem;
+    }
+
+    .voice-carousel{
+      display:flex;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;
+      scrollbar-width:none;
+      gap:0;
+      margin:0 -24px;
+      padding:4px 0 8px;
+      perspective:1400px;
+    }
+    .voice-carousel::-webkit-scrollbar{ display:none; }
+
+    .voice-slide{
+      flex:0 0 100%;
+      scroll-snap-align:center;
+      padding:0 24px;
+      display:flex;
+    }
+
+    .voice{
+      width:100%;
+      padding:30px 26px;
+      border-radius:24px;
+      background:var(--card);
+      box-shadow:var(--shadow);
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      min-height:260px;
+      transform-origin:center center;
+      will-change:transform, opacity;
+      transition:transform .08s linear, opacity .08s linear;
+    }
+
+    .voice::before{
+      content:'\201C';
+      position:absolute;
+      top:6px;
+      left:20px;
+      font-family:"Didot","Bodoni 72","Playfair Display",Georgia,serif;
+      font-size:3.4rem;
+      line-height:1;
+      color:rgba(184,146,61,.5);
+      transition:transform .4s cubic-bezier(.34,1.56,.64,1), color .4s ease;
+    }
+    .voice-slide.is-active .voice::before{
+      color:rgba(184,146,61,.85);
+      transform:scale(1.15) rotate(-4deg);
+    }
+    .voice-slide.is-active .voice-author{
+      color:var(--wine);
+    }
+
+    .voice-text{
+      margin-top:34px;
+      flex:1;
+      overflow-y:auto;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .voice p{
+      margin:0 0 12px;
+      font-family:"Iowan Old Style","Palatino","Book Antiqua",Georgia,serif;
+      font-size:.98rem;
+      line-height:1.6;
+      color:var(--ink);
+      text-align:left;
+    }
+    .voice p:last-child{ margin-bottom:0; }
+
+    .voice .voice-author{
+      margin-top:16px;
+      padding-top:14px;
+      border-top:1px solid var(--line);
+      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif;
+      font-size:.72rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--accent);
+      font-weight:600;
+    }
+
+    .voice-dots{
+      display:flex;
+      justify-content:center;
+      gap:8px;
+      margin:18px 0 6px;
+    }
+    .voice-dot{
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:rgba(76,48,33,.20);
+      transition:background .25s ease, transform .25s ease;
+      cursor:pointer;
+      border:none;
+      padding:0;
+    }
+    .voice-dot.active{
+      background:var(--accent);
+      transform:scale(1.3);
+    }
+
+    .voice-hint{
+      text-align:center;
+      font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+      font-size:.75rem;
+      letter-spacing:.1em;
+      color:var(--muted);
+      opacity:.75;
+      margin-top:4px;
+    }
+
+    /* ======= Выходные данные (колофон) ======= */
+    .colophon{
+      background:linear-gradient(180deg, #3d0f16 0%, #2a0a0f 100%);
+      color:#d4b062;
+      padding:70px 24px 60px;
+      text-align:center;
+    }
+    .colophon-inner{
+      max-width:560px;
+      margin:0 auto;
+      border-top:1px solid rgba(184,146,61,.35);
+      border-bottom:1px solid rgba(184,146,61,.35);
+      padding:44px 20px;
+      position:relative;
+    }
+    .colophon-inner::before,
+    .colophon-inner::after{
+      content:'❦';
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      background:#320c11;
+      padding:0 14px;
+      font-size:14px;
+      color:#b8923d;
+    }
+    .colophon-inner::before{ top:-9px; }
+    .colophon-inner::after{ bottom:-9px; }
+    .colophon-title{
+      font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+      font-size:.75rem;
+      letter-spacing:.4em;
+      text-transform:uppercase;
+      color:#d4b062;
+      margin-bottom:32px;
+    }
+    .colophon-list{
+      display:grid;
+      gap:14px 24px;
+      text-align:left;
+      font-family:"Iowan Old Style","Palatino",Georgia,serif;
+      color:#f3e9d2;
+    }
+    @media (min-width:520px){
+      .colophon-list{ grid-template-columns: max-content 1fr; }
+    }
+    .colophon-list dt{
+      font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+      font-size:.7rem;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:#b8923d;
+      align-self:center;
+    }
+    .colophon-list dd{
+      margin:0;
+      font-size:.95rem;
+      line-height:1.4;
+      color:#f3e9d2;
+    }
+    .colophon-list dd em{ font-style:italic; color:#d4b062; }
+    .colophon-note{
+      margin-top:32px;
+      font-family:"Didot","Bodoni 72",Georgia,serif;
+      font-style:italic;
+      font-size:1rem;
+      color:#d4b062;
+    }
+
+    /* Photo essay — большой разворот с общим фото коллектива */
+    .photo-essay{
+      background:
+        radial-gradient(circle at 50% 0%, rgba(184,146,61,.12), transparent 55%),
+        linear-gradient(180deg, #f5ece2 0%, #efe4cb 100%);
+      padding:60px 0 70px;
+    }
+    .photo-essay .pad{ max-width:1080px; }
+    .photo-essay .kicker{ text-align:center; display:block; margin-bottom:12px; }
+    .photo-essay h2{
+      text-align:center;
+      margin-bottom:8px;
+    }
+    .photo-essay .essay-lead{
+      text-align:center;
+      max-width:560px;
+      margin:0 auto 28px;
+      font-style:italic;
+      color:var(--muted);
+      font-size:1.05rem;
+    }
+    .photo-essay .essay-figure{
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      width:fit-content;
+      max-width:100%;
+      margin:0 auto;
+      border-radius:6px;
+      overflow:hidden;
+      box-shadow:0 30px 60px rgba(48,28,18,.18);
+      border:1px solid rgba(184,146,61,.35);
+      background:var(--card);
+    }
+    .photo-essay .essay-figure::before{
+      content:'';
+      position:absolute;
+      inset:12px;
+      border:1px solid rgba(255,255,255,.35);
+      pointer-events:none;
+    }
+    .photo-essay .essay-figure img{
+      width:auto;
+      max-width:100%;
+      height:auto;
+      max-height:760px;
+      display:block;
+    }
+    .photo-essay .essay-placeholder{
+      padding:60px 40px;
+      text-align:center;
+      color:var(--wine);
+      opacity:.6;
+      font-family:"Didot","Bodoni 72","Bodoni MT","Playfair Display",Georgia,serif;
+    }
+    .photo-essay .essay-placeholder .n{
+      font-size:60px;
+      line-height:1;
+      display:block;
+      margin-bottom:8px;
+    }
+    .photo-essay .essay-placeholder .l{
+      font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+      font-size:11px;
+      letter-spacing:.3em;
+      text-transform:uppercase;
+    }
+    .photo-essay figcaption{
+      margin-top:22px;
+      text-align:center;
+      max-width:600px;
+      margin-left:auto;
+      margin-right:auto;
+      font-family:"Didot","Bodoni 72","Bodoni MT","Playfair Display",Georgia,serif;
+      font-style:italic;
+      font-size:1.15rem;
+      color:var(--ink);
+      line-height:1.4;
+    }
+    .photo-essay .caption-meta{
+      display:block;
+      margin-top:10px;
+      font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+      font-style:normal;
+      font-size:.72rem;
+      letter-spacing:.28em;
+      text-transform:uppercase;
+      color:var(--accent);
+    }
+
+    .gallery-strip{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .gallery-strip img{
+      width:auto;
+      max-width:100%;
+      height:auto;
+      max-height:220px;
+      display:block;
+      border-radius:4px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .divider{
+      height:1px;
+      margin:16px 0 10px;
+      background:linear-gradient(90deg, transparent, rgba(76,48,33,.18), transparent);
+    }
+
+    .highlight-box{
+      padding:20px 18px;
+      border-radius:24px;
+      border:1px solid rgba(76,48,33,.08);
+      background:linear-gradient(180deg, rgba(255,255,255,.72), rgba(247,240,233,.94));
+      box-shadow:var(--shadow-soft);
+    }
+
+    .highlight-box h3{
+      margin-bottom:10px;
+    }
+
+    .metrics{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .metric{
+      padding:16px;
+      border-radius:20px;
+      background:rgba(255,255,255,.82);
+      border:1px solid rgba(76,48,33,.08);
+      text-align:left;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .metric strong{
+      display:block;
+      margin-bottom:8px;
+      font-size:.92rem;
+      color:#5c493e;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    .bouquet-section{
+      background:
+        radial-gradient(circle at top center, rgba(184,146,61,.16), transparent 34%),
+        linear-gradient(180deg, rgba(255,252,248,.94), rgba(244,233,224,.94));
+    }
+
+    .bouquet-wrap{
+      display:grid;
+      gap:18px;
+    }
+
+    .bouquet-stage{
+      position:relative;
+      min-height:430px;
+      border-radius:30px;
+      border:1px solid rgba(76,48,33,.08);
+      background:
+        radial-gradient(circle at 50% 24%, rgba(255,255,255,.82), rgba(255,255,255,.20) 34%, transparent 62%),
+        linear-gradient(180deg, rgba(255,255,255,.60), rgba(239,226,214,.78));
+      overflow:hidden;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .bouquet-cluster{
+      position:absolute;
+      left:50%;
+      top:20px;
+      width:min(420px, 88%);
+      height:330px;
+      transform:translateX(-50%);
+    }
+
+    .bouquet-stems{
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+    }
+
+    .stem{
+      position:absolute;
+      bottom:74px;
+      left:50%;
+      width:3px;
+      background:linear-gradient(180deg, #7aa06f 0%, #587b49 100%);
+      transform-origin:bottom center;
+      border-radius:999px;
+      opacity:.95;
+    }
+
+    .stem.s1{height:150px; transform:translateX(-1px) rotate(-28deg)}
+    .stem.s2{height:165px; transform:translateX(-1px) rotate(-16deg)}
+    .stem.s3{height:184px; transform:translateX(0) rotate(-6deg)}
+    .stem.s4{height:184px; transform:translateX(0) rotate(6deg)}
+    .stem.s5{height:165px; transform:translateX(1px) rotate(16deg)}
+    .stem.s6{height:150px; transform:translateX(1px) rotate(28deg)}
+
+    .leaf{
+      position:absolute;
+      bottom:88px;
+      width:46px;
+      height:24px;
+      background:linear-gradient(135deg, #85a875, #5f824f);
+      border-radius:46px 0 46px 0;
+      opacity:.92;
+      z-index:1;
+      filter:drop-shadow(0 4px 8px rgba(70,95,60,.15));
+    }
+
+    .leaf.l1{
+      left:142px;
+      transform:rotate(-28deg);
+    }
+
+    .leaf.l2{
+      left:225px;
+      transform:scaleX(-1) rotate(-24deg);
+    }
+
+    .leaf.l3{
+      left:186px;
+      bottom:108px;
+      width:38px;
+      height:20px;
+      transform:rotate(18deg);
+      opacity:.84;
+    }
+
+    .flower-btn{
+      position:absolute;
+      width:74px;
+      height:74px;
+      border:none;
+      border-radius:50%;
+      cursor:pointer;
+      display:grid;
+      place-items:center;
+      font-size:31px;
+      color:var(--accent);
+      background:
+        radial-gradient(circle at 35% 35%, rgba(255,255,255,.96), rgba(255,255,255,.18) 35%, transparent 36%),
+        linear-gradient(145deg, #fff7f7, #f3e9d2);
+      box-shadow:
+        0 12px 24px rgba(90,22,32,.16),
+        inset 0 1px 0 rgba(255,255,255,.90);
+      transition:transform .28s ease, box-shadow .28s ease, filter .28s ease;
+      z-index:2;
+    }
+
+    .flower-btn:hover,
+    .flower-btn:active{
+      transform:translateY(-4px) scale(1.05);
+    }
+
+    .flower-btn.active{
+      transform:translateY(-4px) scale(1.06);
+      box-shadow:
+        0 18px 32px rgba(90,22,32,.20),
+        0 0 0 6px rgba(122,30,42,.10);
+    }
+
+    /* Плотная форма букета */
+    .flower-btn.f1{ left:24px;  top:110px; }
+    .flower-btn.f2{ left:92px;  top:46px; }
+    .flower-btn.f3{ left:170px; top:10px; width:82px; height:82px; font-size:34px; }
+    .flower-btn.f4{ left:252px; top:46px; }
+    .flower-btn.f5{ left:320px; top:110px; }
+    .flower-btn.f6{ left:173px; top:112px; }
+
+    .bouquet-shadow{
+      position:absolute;
+      left:50%;
+      bottom:10px;
+      width:260px;
+      height:54px;
+      transform:translateX(-50%);
+      background:radial-gradient(circle, rgba(114,83,67,.18), transparent 72%);
+      filter:blur(10px);
+      z-index:0;
+      pointer-events:none;
+    }
+
+    .vase{
+      position:absolute;
+      left:50%;
+      bottom:24px;
+      width:126px;
+      height:132px;
+      transform:translateX(-50%);
+      clip-path:polygon(14% 0,86% 0,72% 100%,28% 100%);
+      border-radius:24px 24px 36px 36px;
+      border:1px solid rgba(120,102,95,.22);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.54), rgba(220,205,199,.55)),
+        linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.02));
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.78), 0 10px 24px rgba(50,33,24,.10);
+      z-index:1;
+    }
+
+    .wish-panel{
+      padding:20px 18px;
+      border-radius:24px;
+      background:rgba(255,255,255,.82);
+      border:1px solid rgba(76,48,33,.08);
+      box-shadow:var(--shadow-soft);
+    }
+
+    .wish-panel h3{
+      margin-bottom:8px;
+      text-align:left;
+    }
+
+    .wish-panel p{
+      margin-bottom:0;
+      text-align:left;
+      text-align-last:left;
+    }
+
+    .bouquet-caption{
+      text-align:center;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+
+    .signature-box{
+      margin-top:20px;
+      padding:24px 20px;
+      border-radius:24px;
+      background:rgba(255,255,255,.76);
+      border:1px solid rgba(76,48,33,.08);
+      box-shadow:var(--shadow-soft);
+    }
+
+    .footer-cover{
+      min-height:60svh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(184,146,61,.16), transparent 45%),
+        radial-gradient(circle at 80% 80%, rgba(184,146,61,.10), transparent 40%),
+        linear-gradient(160deg, #5a1620 0%, #3d0f16 100%);
+      color:#fff;
+    }
+
+    .footer-cover::before{
+      content:'';
+      position:absolute;
+      inset:20px;
+      border:1px solid rgba(184,146,61,.55);
+      pointer-events:none;
+    }
+
+    .footer-cover .overlay{
+      width:min(100%, 920px);
+      padding:34px 18px;
+      border-radius:6px;
+      background:rgba(255,255,255,.05);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      border:1px solid rgba(184,146,61,.35);
+      position:relative;
+      z-index:1;
+    }
+
+    .footer-cover span{
+      display:block;
+      margin-bottom:16px;
+      font-size:.9rem;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      opacity:.95;
+      color:#d4b062;
+    }
+
+    .footer-cover h1,
+    .footer-cover p{
+      color:#fff;
+      text-align:center;
+      text-align-last:center;
+    }
+
+    .footer-cover p{
+      margin-bottom:0;
+      font-size:1.12rem;
+    }
+
+    @media (max-width: 980px){
+      .hero-grid,
+      .editorial-grid,
+      .traits,
+      .gallery-strip,
+      .metrics{
+        grid-template-columns:1fr;
+      }
+
+      .topbar{
+        border-radius:26px;
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .nav{
+        justify-content:flex-start;
+      }
+
+      .hero-visual{
+        max-width:460px;
+      }
+    }
+
+    @media (max-width: 640px){
+      .page{
+        width:min(calc(100% - 10px), 1380px);
+        padding-top:6px;
+        padding-bottom:34px;
+      }
+
+      .topbar{
+        top:5px;
+        padding:5px 10px;
+        gap:6px;
+      }
+
+      .brand{
+        font-size:.55rem;
+        letter-spacing:.12em;
+      }
+
+      .nav{
+        gap:0;
+      }
+
+      .nav a{
+        font-size:.62rem;
+        padding:3px 6px;
+      }
+
+      .spread{
+        border-radius:24px;
+        margin-bottom:12px;
+      }
+
+      .section{
+        padding-top:42px;
+        padding-bottom:28px;
+      }
+
+      .hero{
+        min-height:68svh;
+        padding-top:72px;
+        padding-bottom:28px;
+      }
+
+      p,
+      li,
+      .card p,
+      .wish-panel p,
+      .subtitle,
+      .lead,
+      .intro{
+        font-size:.98rem;
+      }
+
+      .lead,
+      .subtitle,
+      .intro{
+        font-size:1rem;
+      }
+
+      .quote-card p{
+        font-size:1.38rem;
+      }
+
+      .section-no{
+        top:14px;
+        right:14px;
+        font-size:28px;
+      }
+
+      .bouquet-stage{
+        min-height:390px;
+      }
+
+      .bouquet-cluster{
+        width:min(320px, 92%);
+        height:290px;
+        top:16px;
+      }
+
+      .flower-btn{
+        width:62px;
+        height:62px;
+        font-size:26px;
+      }
+
+      .flower-btn.f1{ left:6px;   top:104px; }
+      .flower-btn.f2{ left:54px;  top:54px; }
+      .flower-btn.f3{ left:118px; top:18px; width:72px; height:72px; font-size:30px; }
+      .flower-btn.f4{ left:188px; top:54px; }
+      .flower-btn.f5{ left:236px; top:104px; }
+      .flower-btn.f6{ left:122px; top:112px; }
+
+      .stem{
+        bottom:68px;
+      }
+
+      .stem.s1{height:132px}
+      .stem.s2{height:146px}
+      .stem.s3{height:164px}
+      .stem.s4{height:164px}
+      .stem.s5{height:146px}
+      .stem.s6{height:132px}
+
+      .leaf{
+        bottom:80px;
+      }
+
+      .leaf.l1{ left:92px; }
+      .leaf.l2{ left:176px; }
+      .leaf.l3{ left:136px; bottom:98px; }
+
+      .vase{
+        width:108px;
+        height:116px;
+      }
+
+      .bouquet-shadow{
+        width:210px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div class="brand">Специальный выпуск</div>
+      <nav class="nav">
+        <a href="#hero">Начало</a>
+        <a href="#mama">История</a>
+        <a href="#formula">Характер</a>
+        <a href="#quotes">Фразы</a>
+        <a href="#heart">Душа</a>
+        <a href="#support">Поддержка</a>
+        <a href="#storm">Сила</a>
+        <a href="#details">Штрихи</a>
+        <a href="#changes">Глава</a>
+        <a href="#bouquet">Букет</a>
+        <a href="#final">Финал</a>
+      </nav>
+    </div>
+
+    <section class="spread hero" id="hero">
+      <div class="pad hero-grid">
+        <div class="hero-copy">
+          <div class="kicker">Специальный выпуск ко Дню рождения</div>
+          <h1>Человек, рядом с которым становится теплее</h1>
+          <p class="lead">
+            Есть руководители, которых уважают. Есть руководители, которых ценят. И есть люди, которых любят всем сердцем. Именно таким человеком для коллектива стала Ирина Александровна.
+          </p>
+        </div>
+
+        <div class="hero-visual">
+          <img src="1.jpg" alt="Атмосферный журнальный кадр" width="900" height="1100" loading="lazy">
+          <div class="mini-caption">special birthday issue / editorial portrait / heartfelt leadership</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="spread section" id="mama">
+      <div class="section-no">01</div>
+      <div class="pad">
+        <div class="kicker">Главная история</div>
+        <h2>Самое тёплое имя в нашем коллективе</h2>
+
+        <div class="editorial-grid">
+          <div class="stack">
+            <div class="card soft">
+              <p class="dropcap">
+                В каждом коллективе есть свои традиции, и наша главная традиция начинается с обращения. Для нас есть только один правильный вариант — Ирина Александровна. Это не просто дань этикету, а символ нашего искреннего уважения, признания её авторитета и мудрости.
+              </p>
+              <p>
+                За этими словами стоят годы совместной работы, решения сложных задач и тот невидимый стержень, который держит всю команду.
+              </p>
+            </div>
+
+            <div class="card">
+              <p>
+                Но, как это часто бывает в больших и дружных семьях, у официального имени есть свой теплый двойник. В узком кругу, за закрытыми дверями кабинета или на неформальных встречах, мы зовём её иначе.
+              </p>
+              <p>
+                Для нас она — наша Мама. С большой буквы. И это не панибратство, это высшая степень доверия.
+              </p>
+              <p>
+                Мама, которая переживает за каждый проект, мама, которая накормит идеями и согреет заботой. Ведь только родному человеку можно доверить самое сокровенное, а ей мы доверяем всё — от рабочих планов до личных переживаний.
+              </p>
+            </div>
+
+            <div class="quote-card">
+              <p>
+                Иногда одно официальное имя говорит о должности, а одно тёплое слово — о месте человека в сердце целого коллектива.
+              </p>
+            </div>
+          </div>
+
+          <div class="side-image">
+            <img src="2.jpg" alt="Светлый журнальный разворот" width="900" height="1120" loading="lazy">
+            <div class="side-note">Официальность, уважение, тепло — именно так начинается эта история.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="spread section" id="formula">
+      <div class="section-no">02</div>
+      <div class="pad">
+        <div class="kicker">Главная тема номера</div>
+        <h2>Сила, мудрость и редкая душевность</h2>
+
+        <div class="card soft">
+          <p class="dropcap">
+            Если бы нас попросили описать Ирину Александровну одним словом, мы бы долго спорили. Потому что одного слова мало. В ней удивительным образом сплелись качества, которые редко встречаются в одном человеке.
+          </p>
+        </div>
+
+        <div class="traits">
+          <div class="trait">
+            <strong>Сила</strong>
+            <p>Та, что позволяет держать удар и вести корабль компании даже в самый сильный шторм.</p>
+          </div>
+          <div class="trait">
+            <strong>Целеустремленность</strong>
+            <p>Когда она ставит цель, весь коллектив знает: мы её достигнем, потому что она не умеет сворачивать с пути.</p>
+          </div>
+          <div class="trait">
+            <strong>Мудрость</strong>
+            <p>Она видит на десять шагов вперед и знает, когда стоит сказать решающее слово.</p>
+          </div>
+          <div class="trait">
+            <strong>Справедливость</strong>
+            <p>Ей можно доверить любой спор, потому что она всегда разберется по-честному.</p>
+          </div>
+          <div class="trait">
+            <strong>Человечность</strong>
+            <p>За сухими цифрами отчетов и жесткими дедлайнами она всегда видит живых людей, их переживания и радости.</p>
+          </div>
+          <div class="trait">
+            <strong>Щедрость души</strong>
+            <p>Её поддержка и доброе слово согревают больше, чем любой бонус, а искренняя радость за наши успехи окрыляет.</p>
+          </div>
+          <div class="trait">
+            <strong>Чувство юмора</strong>
+            <p>Именно оно помогает нам не утонуть в серьезности будней и помнить, что жизнь прекрасна во всех её проявлениях.</p>
+          </div>
+          <div class="trait">
+            <strong>Надежность</strong>
+            <p>Плечо, на которое можно опереться, и рука, которая не дрогнет в трудную минуту.</p>
+          </div>
+        </div>
+
+        <div class="quote-card" style="margin-top:18px;">
+          <p>
+            И всё это — в одной удивительной женщине, нашей Ирине Александровне. Вот она, настоящая формула лидера и просто родного человека.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="spread section" id="quotes">
+      <div class="section-no">03</div>
+      <div class="pad">
+        <div class="kicker">Фразы, которые знает каждый</div>
+        <h2>Голос, который возвращает в тонус</h2>
+
+        <div class="quote-screen">
+          <div class="huge">Не расхолаживаемся!</div>
+          <p class="dropcap">
+            У каждого великого человека есть свои крылатые выражения. У нашей Ирины Александровны их целый арсенал. Мы давно перестали воспринимать их просто как слова — это уже мантры, кодекс и путеводитель по жизни.
+          </p>
+          <p>
+            Самая любимая (и, пожалуй, самая эффективная) фраза — «Не расхолаживаемся!». Удивительно, как четыре слога могут мгновенно вернуть тонус всему офису.
+          </p>
+          <p>
+            Стоит нам чуть выдохнуть, размечтаться или позволить себе лишнюю минуту покоя, как раздается этот мягкий, но такой проницательный голос. И всё — мы снова собраны, снова в тонусе и выдаем результат на все 1000%. Она буквально чувствует атмосферу каждой клеточкой, и эта её суперспособность спасает нас от собственной лени.
+          </p>
+        </div>
+
+        <div class="quote-screen dark">
+          <div class="kicker" style="margin-bottom:10px; color:var(--gold);">Но есть и другая, стратегическая фраза, которую мы выучили наизусть:</div>
+          <div class="huge">
+            Не нужно говорить,<br>
+            что это невозможно сделать,<br>
+            нужно прийти<br>
+            с вариантами решений
+          </div>
+          <p>
+            Это не просто требование — это философия. С ней мы перестали видеть преграды и научились искать пути.
+          </p>
+          <p>
+            Теперь, когда случается проблема, мы уже знаем: прежде чем идти с жалобой, нужно набросать хотя бы три способа её решения.
+          </p>
+        </div>
+
+        <div class="quote-screen accent">
+          <div class="huge">Она всегда знает,<br>когда мы «расслабились»</div>
+          <p>
+            И, конечно, привычка, которая вызывает у нас восхищение: она всегда знает, когда мы «расслабились».
+          </p>
+          <p>
+            Мы не обижаемся, наоборот — мы благодарны. Ведь благодаря этим её привычкам и фразам мы каждый день становимся чуточку сильнее, умнее и собраннее.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="spread section" id="heart">
+      <div class="section-no">04</div>
+      <div class="pad">
+        <div class="kicker">Главное богатство</div>
+        <h2>Там, где строгость не мешает доброте</h2>
+
+        <div class="editorial-grid">
+          <div class="stack">
+            <div class="card soft">
+              <p class="dropcap">
+                Можно быть блестящим руководителем, гениальным стратегом и жестким переговорщиком. Но если за всем этим не стоит настоящая человеческая душа — коллектив никогда не станет семьей.
+              </p>
+              <p>
+                Нам повезло, потому что Ирина Александровна — это редкое сочетание профессионала высочайшего уровня и удивительного, большого сердца.
+              </p>
+            </div>
+
+            <div class="card">
+              <p>Мы ценим её не только за то, как она ведет компанию. Мы ценим её за то, какой она человек.</p>
+              <p>
+                В первую очередь — за искреннюю доброту. Не показную, не дежурную, а настоящую, идущую изнутри. Ту, которая чувствуется в каждом её слове, в каждом взгляде.
+              </p>
+              <p>
+                Она не просто отдает распоряжения — она переживает. Болеет за каждого, будь то серьезный проект или просто трудный день у сотрудника.
+              </p>
+              <p>
+                Её желание помочь — это не просто слова. Она всегда найдет время выслушать, подставить плечо, дать совет, по-человечески — тепло и участливо.
+              </p>
+              <p>
+                Она помнит о дне рождения каждого, переживает, если кто-то заболел, и искренне радуется нашим маленьким победам.
+              </p>
+            </div>
+
+            <div class="quote-card">
+              <p>
+                В мире, где часто правят холодный расчёт и бездушные цифры, Ирина Александровна доказывает: успех организации строится на любви и уважении к людям. И за это мы благодарны ей бесконечно.
+              </p>
+            </div>
+          </div>
+
+          <div class="side-image">
+            <img src="3.jpg" alt="Мягкий светлый журнальный образ" width="900" height="1120" loading="lazy">
+            <div class="side-note">Там, где другие управляют цифрами, она всегда видит людей.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="spread section" id="support">
+      <div class="section-no">05</div>
+      <div class="pad">
+        <div class="kicker">Поддержка</div>
+        <h2>Поддержка без условий</h2>
+
+        <div class="card">
+          <p class="dropcap">
+            Говорят, что начальник должен быть строгим и держать дистанцию. Наверное, в учебниках по менеджменту так и написано. Но Ирина Александровна, как всегда, пишет свои собственные правила — правилами души.
+          </p>
+          <p>
+            Мы честно пытались вспомнить хоть один случай, хоть один единственный раз, когда она не пришла бы на помощь. И не смогли. Потому что такого просто не было.
+          </p>
+          <p>
+            За все годы её работы в нашем МФЦ не случилось ни одной ситуации, чтобы она отвернулась, отмахнулась или сказала: «Разбирайся сам».
+          </p>
+
+          <div class="divider"></div>
+
+          <p>
+            Она всегда первая замечает, что у сотрудника что-то не так. Первая подходит, первая спрашивает, первая предлагает выход.
+          </p>
+          <p>
+            Неважно, в какое время суток это происходит и насколько загружен её собственный день. Если кто-то из команды оказывается в сложной ситуации — она уже рядом. Причём поддержка приходит разная.
+          </p>
+          <p>
+            Иногда это крепкое деловое плечо: «Давай разберемся вместе, я помогу решить эту проблему». Иногда — мудрый совет, который расставляет всё по местам. А иногда — просто тёплое слово, искреннее участие и понимание, которое лечит лучше любых инструкций.
+          </p>
+
+          <div class="highlight-box">
+            <h3>Когда трудно — она рядом</h3>
+            <p>
+              Мы знаем: если случилась беда, если запутался в отчетах, если клиент довел до отчаяния или просто тяжко на душе — есть человек, который не оставит в беде. В любое время, в любой ситуации, с любым вопросом. И этот человек — наша Ирина Александровна.
+            </p>
+          </div>
+
+          <p style="margin-top:18px; text-align:center; font-weight:600;">
+            Поддержка без исключений. Помощь без условий. Так бывает только в настоящей семье.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="spread section" id="storm">
+      <div class="section-no">06</div>
+      <div class="pad">
+        <div class="kicker">Испытания</div>
+        <h2>Спокойствие, которое спасало нас</h2>
+
+        <div class="editorial-grid">
+          <div class="stack">
+            <div class="card soft">
+              <p class="dropcap">
+                В работе МФЦ спокойных дней не бывает. Это аксиома. Но есть ситуации, которые выходят за рамки обычного аврала — когда всё идет кувырком, планы рушатся, а у сотрудников опускаются руки. И вот тогда, словно по волшебству, появляется Она.
+              </p>
+              <p>
+                Ирина Александровна — человек-стабилизатор. Когда весь коллектив в панике, когда нервы на пределе, а кажется, что выхода нет, она сохраняет ледяное спокойствие.
+              </p>
+              <p>
+                И это не холодная отстранённость — это мудрая уверенность, которая передаётся каждому из нас. Пока мы мечемся в поисках решения, она уже знает, что делать, и просто идёт и решает.
+              </p>
+            </div>
+
+            <div class="card">
+              <p>
+                Причём идёт без страха. Если нужно — к самому высокому руководству, чтобы отстоять интересы МФЦ и сотрудников. Если нужно — берёт в руки шпатель и сама делает ремонт, который ждали годами. Никаких «это не моя работа» или «пусть другие». Нет. У неё простое правило: раз надо — делаю.
+              </p>
+              <p>
+                Но самый яркий пример её характера — это, конечно, ковид. В то время, когда по всей стране МФЦ закрывались один за другим, наше отделение не закрылось ни на один день.
+              </p>
+              <p>
+                И это при том, что внутри отделения в самый разгар пандемии шёл капитальный ремонт. Строительная пыль, шум, перестановки, хаос — а приём людей продолжался.
+              </p>
+              <p>
+                Сотрудники переезжали с места на место... четыре раза! Четыре раза за короткий срок мы меняли локации внутри собственного офиса. Но каждый день, каждую минуту двери были открыты для людей.
+              </p>
+              <p>
+                И всё это — благодаря Ирине Александровне. Её воле, её организованности и её нечеловеческой способности находить решение там, где его, казалось бы, нет.
+              </p>
+              <p>
+                Мы помним этот период с особым чувством гордости. Потому что тогда мы не просто коллеги — мы стали одной командой, готовой на всё. А вдохновила, собрала и повела за собой нас именно она. Без страха, без паники, с ясной головой и горячим сердцем.
+              </p>
+            </div>
+          </div>
+
+          <div class="stack">
+            <div class="side-image">
+              <img src="4.jpg" alt="Журнальный кадр пространства и ремонта" width="900" height="1120" loading="lazy">
+              <div class="side-note">Когда у всех паника, у неё появляется ясность.</div>
+            </div>
+
+            <div class="quote-card">
+              <p>
+                Там, где другие растерялись, она сохраняла свет и вела вперёд.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="spread section" id="details">
+      <div class="section-no">07</div>
+      <div class="pad">
+        <div class="kicker">Штрихи к портрету</div>
+        <h2>Из любимых мелочей складывается человек</h2>
+
+        <div class="card">
+          <p class="dropcap">
+            Каждый человек состоит из мелочей. Из тех самых «фишечек», которые делают его неповторимым. У Ирины Александровны таких фирменных штрихов много, и мы их очень любим. Начнём с гастрономических пристрастий.
+          </p>
+          <p>
+            Её любимые конфеты — «Золотая лилия». Заметили давно и теперь всегда знаем, что можно порадовать в праздник. Но главный напиток в её жизни — это, конечно, апельсины и лимоны, залитые водой. Это не просто витаминный напиток — это её личная «зарядка». Вместо обычной воды — только такой ароматный и полезный микс. Мы уже привыкли видеть на её столе прозрачный кувшин с цитрусовыми дольками, и без этой картины офис кажется каким-то неполным.
+          </p>
+          <p>
+            Что касается цветов, Ирина Александровна не из тех, кто ждёт срезанных букетов в вазе (хотя их мы, конечно, тоже дарим). Её сердце принадлежит цветам в горшках. Живым, зелёным, настоящим. Она любит ухаживать за ними, наблюдать, как они растут и цветут. Это маленькая оранжерея в её кабинете, частичка домашнего уюта.
+          </p>
+          <p>
+            А главное хобби, о котором знают все, — это дизайн и строительство. Причём в равной степени и дома, и на работе. Если в отделении затевается перестановка, ремонт или обновление пространства — будьте уверены, Ирина Александровна будет в центре событий, как дирижёр, который слышит каждый инструмент своего оркестра. Она не просто руководит процессом — она живёт им. Подбирает цвета, продумывает планировку, знает, где что должно стоять, чтобы было и красиво, и удобно. Это её творчество, её способ создавать уют и гармонию вокруг себя.
+          </p>
+          <p>
+            Наверное, именно поэтому у нас в МФЦ всегда так тепло и по-домашнему — потому что частичка её души вложена в каждую деталь.
+          </p>
+
+          <div class="gallery-strip">
+            <img src="5.jpg" alt="Декоративный кадр с цитрусовой водой" width="700" height="780" loading="lazy">
+            <img src="6.jpg" alt="Декоративный кадр с домашними растениями" width="700" height="780" loading="lazy">
+            <img src="7.jpg" alt="Декоративный интерьерный журнальный кадр" width="700" height="780" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="spread section" id="changes">
+      <div class="section-no">08</div>
+      <div class="pad">
+        <div class="kicker">Эпоха перемен</div>
+        <h2>С неё началась новая глава</h2>
+
+        <div class="card soft">
+          <p class="dropcap">
+            Оглядываясь назад, мы с удивлением понимаем: жизнь нашего МФЦ делится на «до» и «после». «До» — это было просто место работы. «После» — это целая вселенная, которую создала одна удивительная женщина.
+          </p>
+          <p>
+            С приходом Ирины Александровны всё начало меняться. Сначала незаметно — как первые лучи рассвета, которые ещё не заметны, но уже меняют цвет неба. А потом — стремительно и необратимо. Она не просто пришла руководить — она пришла созидать. И под её чутким руководством отделение расцвело буквально на глазах.
+          </p>
+        </div>
+
+        <div class="card">
+          <p>
+            Качество услуг вышло на совершенно новый уровень. Мы перестали быть просто пунктом приёма документов — мы стали настоящим центром помощи и сервиса, где каждому посетителю уделяют внимание и заботу.
+          </p>
+          <p>
+            И это признали не только наши клиенты, но и профессионалы: наше МФЦ стало ежегодно занимать призовые места в престижных профессиональных конкурсах. Мы входим в число лучших — и это не просто строчка в отчёте, это наша общая гордость.
+          </p>
+        </div>
+
+        <div class="quote-card">
+          <p>
+            Но победы в конкурсах — это лишь вершина айсберга. Внутри произошла настоящая революция.
+          </p>
+        </div>
+
+        <div class="card">
+          <p>
+            Пришла новая техника, которая ускорила работу в разы. Появилась новая мебель — удобная, красивая, современная. Наш офис перестал быть казённым учреждением и превратился в стильное, светлое пространство, куда приятно приходить и сотрудникам, и посетителям.
+          </p>
+          <p>
+            Изменился и внешний вид специалистов. Вместе с обновлением офиса пришло понимание: мы — лицо МФЦ, и выглядеть мы должны соответственно. Ирина Александровна научила нас гордиться своим делом и своим внешним видом. Теперь мы не просто сотрудники — мы команда профессионалов, которые знают себе цену.
+          </p>
+          <p>
+            И, конечно, самое главное — изменились зарплаты. Ирина Александровна всегда знала: чтобы люди работали с душой, нужно ценить их труд по-настоящему. И она сделала всё, чтобы мы чувствовали эту заботу не только морально, но и материально.
+          </p>
+        </div>
+
+        <div class="metrics">
+          <div class="metric">
+            <strong>Сервис с душой</strong>
+            Внимание и забота каждому, кто переступил порог
+          </div>
+          <div class="metric">
+            <strong>Признание коллег</strong>
+            Призовые места из года в год — не случайность, а система
+          </div>
+          <div class="metric">
+            <strong>Новый облик</strong>
+            Техника, мебель, лица — всё заговорило иначе
+          </div>
+          <div class="metric">
+            <strong>Забота не на словах</strong>
+            Труд, который наконец оценили по достоинству
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:18px;">
+          <p class="dropcap">
+            Но самое удивительное даже не в технике, мебели или зарплате. Самое удивительное — как она изменила нас.
+          </p>
+          <p>
+            Изменился не только офис. Изменились мы сами. Под её руководством мы росли, учились, становились лучше, увереннее, профессиональнее — так, как растёт дерево, которое наконец получило достаточно света.
+          </p>
+          <p>
+            Она вдохнула в каждого из нас веру в свои силы и желание быть лучшим в своём деле.
+          </p>
+          <p>
+            Ирина Александровна не просто изменила МФЦ. Она создала команду, которой по плечу любые задачи. Она воспитала в нас чувство ответственности, гордости и любви к своей работе.
+          </p>
+        </div>
+
+        <div class="quote-card">
+          <p>
+            И оглядываясь на этот путь — от первых дней её прихода до сегодняшнего дня — мы понимаем: это была настоящая эпоха перемен. Эпоха, которую создала она. Для нас, вместе с нами и благодаря нам.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="spread section bouquet-section" id="bouquet">
+      <div class="section-no">09</div>
+      <div class="pad bouquet-wrap">
+        <div>
+          <div class="kicker">Букет пожеланий</div>
+          <h2>Букет нежных пожеланий</h2>
+          <p class="subtitle">Нажми на цветок, чтобы получить пожелание. У каждого их несколько — жми ещё раз, откроется новое.</p>
+        </div>
+
+        <div class="bouquet-stage" aria-label="Интерактивный букет пожеланий">
+          <div class="bouquet-cluster">
+            <div class="bouquet-stems">
+              <div class="stem s1"></div>
+              <div class="stem s2"></div>
+              <div class="stem s3"></div>
+              <div class="stem s4"></div>
+              <div class="stem s5"></div>
+              <div class="stem s6"></div>
+            </div>
+
+            <div class="leaf l1" aria-hidden="true"></div>
+            <div class="leaf l2" aria-hidden="true"></div>
+            <div class="leaf l3" aria-hidden="true"></div>
+
+            <button class="flower-btn f1 active" type="button" data-wishes='[{"title":"Свет и радость","message":"Пусть каждый новый день приносит Вам тепло, вдохновение и ощущение внутренней гармонии."},{"title":"Ясные дни","message":"Пусть в жизни будет больше солнечных дней — и в прямом, и в переносном смысле."},{"title":"Лёгкость","message":"Пусть даже самые загруженные дни оставляют место для лёгкости и хорошего настроения."},{"title":"Радость в мелочах","message":"Пусть маленькие радости находят Вас каждый день — чашка любимого чая, тёплое слово, красивый закат."},{"title":"Вдохновение","message":"Пусть вдохновение приходит легко, а идеи находят отклик и воплощение."},{"title":"Хорошее настроение","message":"Пусть хорошее настроение станет Вашим верным спутником на долгие годы."},{"title":"Свет внутри","message":"Пусть тот свет, что Вы дарите другим, всегда возвращается к Вам сторицей."},{"title":"Улыбки утром","message":"Пусть каждое утро начинается с улыбки и повода для неё."},{"title":"Утренний кофе","message":"Пусть каждое утро встречает Вас чашкой ароматного кофе и хорошими новостями."},{"title":"Весенние дни","message":"Пусть в жизни будет вечная весна — когда всё цветёт и хочется дышать полной грудью."},{"title":"Праздничное настроение","message":"Пусть праздничное настроение живёт с Вами не только по праздникам."},{"title":"Смех и радость","message":"Пусть в жизни будет много искреннего смеха и поводов для радости."},{"title":"Красивые закаты","message":"Пусть Вам всегда будет с кем смотреть на закат."},{"title":"Тёплое солнце","message":"Пусть солнце всегда греет Вам плечи, а ветер — не пугает."},{"title":"Внутренний свет","message":"Пусть внутри всегда горит тот огонёк, который освещает путь и Вам, и другим."},{"title":"Звонкие моменты","message":"Пусть в жизни будет больше звонких, чистых, светлых моментов."},{"title":"Свежий воздух","message":"Пусть каждый глоток воздуха будет глотком свободы и радости."},{"title":"Свет в окнах","message":"Пусть в окнах Вашего дома всегда горит тёплый свет — в прямом и переносном смысле."},{"title":"Хорошая погода","message":"Пусть погода за окном всегда совпадает с настроением в душе."},{"title":"Тёплые вечера","message":"Пусть вечера будут долгими и тёплыми, а утра — лёгкими и бодрыми."},{"title":"Цветение","message":"Пусть жизнь цветёт для Вас так же щедро, как цветы в Вашем кабинете."},{"title":"Праздник каждый день","message":"Пусть даже обычный четверг иногда превращается в маленький праздник."},{"title":"Мелодия дня","message":"Пусть каждый день звучит для Вас как любимая мелодия."},{"title":"Яркие краски","message":"Пусть жизнь красит Ваши дни в самые яркие и красивые цвета."},{"title":"Чистое небо","message":"Пусть над головой всегда будет чистое, ясное небо."},{"title":"Первый лучик","message":"Пусть каждое утро встречает первым тёплым лучиком солнца."},{"title":"Полдень","message":"Пусть каждый полдень будет насыщенным, но не изматывающим."},{"title":"Волшебство обычных дней","message":"Пусть в самых обычных днях находится место маленькому волшебству."},{"title":"Дыхание жизни","message":"Пусть дышится глубоко и легко — и в буквальном, и в переносном смысле."},{"title":"Праздничный чай","message":"Пусть даже обычный чай иногда становится праздничным."},{"title":"Мгновения радости","message":"Пусть мгновений чистой радости в жизни будет больше, чем поводов для беспокойства."},{"title":"Свежесть утра","message":"Пусть каждое утро дарит ощущение свежести и новых возможностей."},{"title":"Игра света","message":"Пусть свет всегда находит красивую сторону вещей — и людей."},{"title":"Ласковое солнце","message":"Пусть солнце всегда будет к Вам ласково."},{"title":"Утренний свет","message":"Пусть первые лучи солнца всегда находят дорогу к Вашему окну."},{"title":"День без спешки","message":"Пусть хотя бы один день в неделе проходит без суеты и дедлайнов."},{"title":"Тёплый плед","message":"Пусть в жизни находится место для тихих вечеров под тёплым пледом."},{"title":"Звёздное небо","message":"Пусть иногда удаётся поднять голову и увидеть звёзды."},{"title":"Аромат кофе","message":"Пусть утренний аромат кофе всегда предвещает хороший день."},{"title":"Дождь за окном","message":"Пусть даже дождливые дни кажутся уютными, если рядом тепло."},{"title":"Первый снег","message":"Пусть первый снег каждый год напоминает о чуде и детской радости."},{"title":"Праздничный фейерверк","message":"Пусть жизнь иногда удивляет яркими, как салют, моментами."},{"title":"Ясный горизонт","message":"Пусть впереди всегда виден ясный, обнадёживающий горизонт."},{"title":"Радуга после дождя","message":"Пусть после любых трудностей обязательно приходит радуга."},{"title":"Летний вечер","message":"Пусть летние вечера будут долгими, тёплыми и неспешными."},{"title":"Морской бриз","message":"Пусть хотя бы иногда получается вдохнуть солёный морской воздух."},{"title":"Тихая гавань","message":"Пусть всегда найдётся тихая гавань, куда можно вернуться после бури."},{"title":"Свежий снег","message":"Пусть жизнь иногда дарит ощущение первого снега — чистое и радостное."},{"title":"Луч надежды","message":"Пусть луч надежды пробивается даже в самый пасмурный день."},{"title":"Праздничный стол","message":"Пусть праздничный стол собирает вокруг только тех, кого Вы любите."},{"title":"Ясный рассвет","message":"Пусть каждый рассвет обещает день, полный хороших сюрпризов."},{"title":"Мягкий закат","message":"Пусть закаты всегда напоминают: день прожит не зря."},{"title":"Хрустящий снег","message":"Пусть зима дарит не только холод, но и радость первых снежинок."},{"title":"Аромат сирени","message":"Пусть весна каждый год приносит аромат сирени и чувство обновления."},{"title":"Полёт мысли","message":"Пусть мысли летают свободно, а решения находятся легко."},{"title":"Огонь свечи","message":"Пусть в доме всегда горит хотя бы одна свеча — для уюта и тепла."},{"title":"Звон бокалов","message":"Пусть в жизни будет много поводов для звона праздничных бокалов."},{"title":"Утренняя роса","message":"Пусть жизнь остаётся такой же свежей, как утренняя роса на траве."},{"title":"Тёплый плед у камина","message":"Пусть находится время посидеть у камина — реального или воображаемого."},{"title":"Праздничный салют","message":"Пусть в жизни будет как можно больше поводов для праздничного салюта."},{"title":"Летнее настроение","message":"Пусть летнее настроение сохраняется даже зимой."}]'>✿</button>
+            <button class="flower-btn f2" type="button" data-wishes='[{"title":"Крепкое здоровье","message":"Пусть рядом всегда будут силы, энергия, бодрость и спокойствие за всё, что Вам дорого."},{"title":"Бодрость духа","message":"Пусть тело и дух всегда будут в ладу, а энергии хватает на всё задуманное."},{"title":"Забота о себе","message":"Пусть найдётся время и на заботу о себе — Вы заслуживаете этого не меньше, чем все, о ком заботитесь Вы."},{"title":"Спокойный сон","message":"Пусть сон будет крепким, а пробуждение — лёгким и радостным."},{"title":"Внутренний ресурс","message":"Пусть внутренних сил всегда будет с запасом — на все свершения и на отдых тоже."},{"title":"Долголетие","message":"Пусть здоровье остаётся крепким долгие-долгие годы, даря силы для новых побед."},{"title":"Гармония тела и духа","message":"Пусть в организме всегда царит гармония, а болезни обходят стороной."},{"title":"Лёгкость шагов","message":"Пусть шаги всегда будут лёгкими, а спина — прямой."},{"title":"Ясная голова","message":"Пусть голова всегда остаётся ясной, а память — острой и цепкой."},{"title":"Крепкое сердце","message":"Пусть сердце бьётся ровно и радостно — без поводов для тревоги."},{"title":"Прогулки на воздухе","message":"Пусть в графике всегда найдётся место для прогулок и свежего воздуха."},{"title":"Утренняя зарядка","message":"Пусть каждое утро дарит бодрость — как та цитрусовая вода, что оживляет Ваш день."},{"title":"Отдых по-настоящему","message":"Пусть отдых будет настоящим, глубоким, восстанавливающим."},{"title":"Витамины лета","message":"Пусть каждое лето заряжает Вас витаминами и хорошим настроением на весь год."},{"title":"Тишина внутри","message":"Пусть внутри всегда будет тихо и спокойно — даже когда снаружи шумно."},{"title":"Отпуск мечты","message":"Пусть отпуска будут долгими и такими, каких Вы хотите."},{"title":"Крепкий тонус","message":"Пусть тонус всегда остаётся высоким, а усталость — редкой гостьей."},{"title":"Живое дыхание","message":"Пусть дыхание всегда будет ровным и свободным."},{"title":"Улыбка на лице","message":"Пусть здоровье позволяет улыбаться легко и часто."},{"title":"Активные годы","message":"Пусть впереди будет много активных, полных сил и энергии лет."},{"title":"Забота близких","message":"Пусть о Вас всегда есть кому позаботиться — как заботитесь Вы обо всех нас."},{"title":"Полный покой","message":"Пусть моменты покоя восстанавливают Вас глубже, чем самый долгий отпуск."},{"title":"Внутренняя гармония","message":"Пусть внутри тела всегда будет гармония, а снаружи — красота и элегантность."},{"title":"Здоровые привычки","message":"Пусть привычки всегда работают на Вас, а не против Вас."},{"title":"Бодрое утро","message":"Пусть каждое утро начинается с ощущения, что впереди — прекрасный день."},{"title":"Долгие вечера","message":"Пусть в конце дня хватает сил и на разговоры по душам."},{"title":"Гибкость лет","message":"Пусть годы прибавляют мудрости, но не отнимают гибкости и лёгкости."},{"title":"Ясный взгляд","message":"Пусть глаза всегда сияют, а взгляд остаётся острым и внимательным."},{"title":"Пружинистая походка","message":"Пусть шаги всегда будут пружинистыми, а спина — молодой."},{"title":"Крепкий иммунитет","message":"Пусть никакие вирусы не смеют приближаться."},{"title":"Танцевать хотеть","message":"Пусть всегда будет желание танцевать — в прямом или переносном смысле."},{"title":"Молодая душа","message":"Пусть душа остаётся молодой — независимо от того, сколько свечей на торте."},{"title":"Хорошее самочувствие","message":"Пусть хорошее самочувствие станет нормой, а плохое — редким исключением."},{"title":"Ежедневная бодрость","message":"Пусть каждый день начинается с ощущения, что всё получится."},{"title":"Крепкий позвоночник","message":"Пусть спина остаётся прямой, а осанка — королевской."},{"title":"Ясный ум","message":"Пусть ясность мысли сопровождает Вас в любом возрасте."},{"title":"Живой блеск в глазах","message":"Пусть в глазах всегда сохраняется живой, любопытный блеск."},{"title":"Крепкий сон","message":"Пусть каждую ночь удаётся выспаться по-настоящему."},{"title":"Активное долголетие","message":"Пусть годы прибавляют не усталости, а мудрости и энергии."},{"title":"Сила в руках","message":"Пусть руки всегда остаются сильными и уверенными."},{"title":"Здоровое сердце","message":"Пусть сердце бьётся спокойно и уверенно долгие годы."},{"title":"Хороший аппетит","message":"Пусть аппетит к жизни и к вкусной еде никогда не пропадает."},{"title":"Крепкие нервы","message":"Пусть нервная система остаётся крепкой, что бы ни происходило вокруг."},{"title":"Стройная фигура","message":"Пусть тело радует лёгкостью и хорошим самочувствием."},{"title":"Гибкий ум","message":"Пусть ум остаётся таким же гибким, как в молодости."},{"title":"Здоровые суставы","message":"Пусть суставы никогда не напоминают о себе болью."},{"title":"Ровное давление","message":"Пусть давление всегда остаётся в норме, а пульс — спокойным."},{"title":"Хорошее зрение","message":"Пусть глаза видят мир так же ясно, как и сегодня."},{"title":"Крепкий слух","message":"Пусть слух улавливает каждую хорошую новость и доброе слово."},{"title":"Энергия молодости","message":"Пусть энергии хватает на всё — от работы до танцев."},{"title":"Быстрое восстановление","message":"Пусть силы восстанавливаются легко после любых нагрузок."},{"title":"Ровное дыхание","message":"Пусть дыхание остаётся глубоким и свободным всегда."},{"title":"Здоровая кожа","message":"Пусть кожа сияет здоровьем и молодостью."},{"title":"Крепкие зубы","message":"Пусть улыбка остаётся такой же красивой долгие годы."},{"title":"Хорошая координация","message":"Пусть тело слушается легко и без усилий."},{"title":"Внутренний баланс","message":"Пусть организм всегда находит баланс между нагрузкой и отдыхом."},{"title":"Здоровый румянец","message":"Пусть щёки всегда пылают здоровым румянцем."},{"title":"Устойчивость к стрессу","message":"Пусть стрессы отскакивают, не оставляя следа."},{"title":"Полные силы утром","message":"Пусть каждое утро начинается с ощущения полных сил."},{"title":"Активная старость","message":"Пусть если и наступит старость — то только активная и радостная."},{"title":"Ровный пульс","message":"Пусть пульс остаётся спокойным даже в самые горячие моменты."}]'>✿</button>
+            <button class="flower-btn f3" type="button" data-wishes='[{"title":"Любовь близких","message":"Пусть рядом будут люди, которые искренне ценят, любят и берегут Вас так же, как ценим Вас мы."},{"title":"Тепло семьи","message":"Пусть дома всегда ждут любовь, поддержка и уютные вечера с самыми родными людьми."},{"title":"Настоящая дружба","message":"Пусть в жизни будет как можно больше людей, которым можно довериться без оглядки."},{"title":"Взаимность","message":"Пусть забота, которую Вы дарите другим, всегда возвращается любовью и вниманием."},{"title":"Крепкий тыл","message":"Пусть рядом всегда будет надёжное плечо — то самое, на которое можно опереться в любой момент."},{"title":"Семейное счастье","message":"Пусть в семье царят понимание, нежность и много поводов для улыбок."},{"title":"Окружение мечты","message":"Пусть Вас окружают только те, кто искренне рад Вашим успехам."},{"title":"Тёплый дом","message":"Пусть дом будет местом, куда всегда хочется возвращаться."},{"title":"Родные голоса","message":"Пусть родные голоса звучат в Вашей жизни как можно чаще."},{"title":"Понимание с полуслова","message":"Пусть рядом всегда будут те, кто понимает Вас без слов."},{"title":"Праздничный стол","message":"Пусть за Вашим столом всегда собираются самые дорогие люди."},{"title":"Материнская гордость","message":"Пусть Ваши близкие радуют Вас каждый день, а поводы для гордости — не заканчиваются."},{"title":"Внучата","message":"Пусть в жизни будет как можно больше моментов, ради которых стоит откладывать все дела."},{"title":"Верные друзья","message":"Пусть друзья всегда будут рядом — не только в радости, но и в тишине буднего дня."},{"title":"Родственные души","message":"Пусть жизнь дарит встречи с родственными душами."},{"title":"Домашний уют","message":"Пусть в доме всегда пахнет чем-то вкусным, а на столе — стоит букет от того, кто дорог."},{"title":"Тёплые звонки","message":"Пусть телефон чаще звонит с хорошими новостями."},{"title":"Совместные вечера","message":"Пусть вечера в кругу семьи будут долгими и уютными."},{"title":"Радость близких","message":"Пусть радость близких всегда согревает Вас сильнее любого солнца."},{"title":"Крепкие узы","message":"Пусть узы, что связывают Вас с родными, только крепнут с годами."},{"title":"Милые ссоры","message":"Пусть даже мелкие ссоры быстро сменяются самыми крепкими объятиями."},{"title":"Прощение и любовь","message":"Пусть в отношениях с близкими всегда хватает и прощения, и любви."},{"title":"Совместные праздники","message":"Пусть праздники всегда собирают самых дорогих людей за одним столом."},{"title":"Тепло рук","message":"Пусть рядом всегда будут те, чьи руки согревают одним прикосновением."},{"title":"Разговоры до утра","message":"Пусть остаются в жизни те, с кем можно проговорить до рассвета."},{"title":"Радость встреч","message":"Пусть каждая встреча с близкими будет как маленький праздник."},{"title":"Родительское счастье","message":"Пусть Ваши дети радуют Вас так же, как радуются Вашей заботе."},{"title":"Дети рядом","message":"Пусть дети всегда чувствуют, что дом там, где мама."},{"title":"Крепкая семья","message":"Пусть семья будет той крепостью, которая никогда не подведёт."},{"title":"Совет и опора","message":"Пусть Ваш опыт и мудрость всегда нужны родным."},{"title":"Гости в доме","message":"Пусть дом будет полон гостей, а сердце — тепла."},{"title":"Тихое счастье вдвоём","message":"Пусть находится время просто быть рядом — без слов, без спешки."},{"title":"Совместные путешествия","message":"Пусть впереди будет много поездок, из которых возвращаются с полным сердцем воспоминаний."},{"title":"Праздничные звонки","message":"Пусть в день рождения телефон не замолкает от поздравлений."},{"title":"Материнская забота","message":"Пусть материнская забота, которую Вы дарите нам, возвращается сторицей от родных."},{"title":"Крепкие объятия","message":"Пусть в жизни будет много крепких, искренних объятий."},{"title":"Нежность в доме","message":"Пусть в доме всегда царит нежность и взаимопонимание."},{"title":"Радость внуков","message":"Пусть внуки дарят радость и повод для гордости каждый день."},{"title":"Верный супруг","message":"Пусть рядом всегда будет тот, кто понимает без слов."},{"title":"Праздник в кругу семьи","message":"Пусть праздники проходят в кругу самых дорогих людей."},{"title":"Гостеприимный дом","message":"Пусть дом всегда будет полон тепла для гостей и родных."},{"title":"Дружеская поддержка","message":"Пусть друзья поддерживают в любую минуту, без вопросов и условий."},{"title":"Семейные традиции","message":"Пусть семейные традиции только крепнут и передаются дальше."},{"title":"Тихие семейные вечера","message":"Пусть вечера в кругу семьи будут долгими, тёплыми и спокойными."},{"title":"Родительская гордость","message":"Пусть дети и внуки дарят поводы для гордости каждый день."},{"title":"Крепкая рука рядом","message":"Пусть рядом всегда будет та самая крепкая, надёжная рука."},{"title":"Праздничные объятия","message":"Пусть каждый праздник заканчивается тёплыми объятиями родных."},{"title":"Дружба на всю жизнь","message":"Пусть дружба, проверенная годами, остаётся такой же крепкой."},{"title":"Семейный очаг","message":"Пусть семейный очаг горит ровно и тепло долгие годы."},{"title":"Родные рядом","message":"Пусть родные люди всегда оказываются рядом именно тогда, когда нужны."},{"title":"Дом полон любви","message":"Пусть дом всегда будет полон любви, смеха и разговоров."},{"title":"Крепкая связь поколений","message":"Пусть связь между поколениями в семье только укрепляется."},{"title":"Верность друзей","message":"Пусть друзья остаются верными несмотря на расстояния и время."},{"title":"Семейный уют","message":"Пусть уют в семье будет таким же надёжным, как Ваша забота о нас."},{"title":"Праздничные встречи","message":"Пусть встречи с родными случаются чаще, чем расставания."},{"title":"Любовь без условий","message":"Пусть любовь близких будет безусловной — как та, что дарите Вы."},{"title":"Крепкие связи","message":"Пусть связи с самыми дорогими людьми не ослабевают с годами."},{"title":"Родительское тепло","message":"Пусть тепло, которое Вы дарите, всегда возвращается сполна."},{"title":"Семейные праздники","message":"Пусть семейные праздники становятся ярче год от года."},{"title":"Дружеский круг","message":"Пусть круг близких друзей только расширяется."},{"title":"Объятия детей","message":"Пусть объятия детей и внуков случаются как можно чаще."}]'>✿</button>
+            <button class="flower-btn f4" type="button" data-wishes='[{"title":"Новые мечты","message":"Пусть впереди будет ещё много счастливых замыслов, красивых идей и поводов гордиться собой."},{"title":"Смелые цели","message":"Пусть все задуманные планы воплощаются легко и с удовольствием."},{"title":"Новые горизонты","message":"Пусть жизнь дарит новые возможности и пространство для смелых решений."},{"title":"Вера в себя","message":"Пусть уверенности в своих силах хватает на любые, даже самые смелые начинания."},{"title":"Творческий полёт","message":"Пусть творческих идей будет много, а вдохновение никогда не иссякает."},{"title":"Осуществление желаний","message":"Пусть самые заветные желания находят дорогу к исполнению."},{"title":"Движение вперёд","message":"Пусть каждый год открывает новую, ещё более интересную главу жизни."},{"title":"Реализованные планы","message":"Пусть все планы, даже самые смелые, обязательно сбываются."},{"title":"Достойные проекты","message":"Пусть впереди будет ещё много проектов, которыми хочется гордиться."},{"title":"Дизайнерские находки","message":"Пусть каждая новая идея — от офиса до дома — воплощается ещё красивее задуманного."},{"title":"Новые вершины","message":"Пусть покоряются новые вершины — на работе и в жизни."},{"title":"Ремонт мечты","message":"Пусть каждый новый проект в стройке и дизайне приносит удовольствие, а не усталость."},{"title":"Смелые эксперименты","message":"Пусть на всё смелое всегда хватает решимости и вдохновения."},{"title":"Идеи наяву","message":"Пусть идеи, что рождаются во сне, легко становятся реальностью днём."},{"title":"Награды впереди","message":"Пусть впереди будет ещё много поводов подняться на сцену за наградой."},{"title":"Триумф побед","message":"Пусть побед будет много, а поражений — минимум, и то только уроками."},{"title":"Успех во всём","message":"Пусть успех сопровождает в каждом начинании — большом и малом."},{"title":"Новые проекты","message":"Пусть каждый новый проект вдохновляет команду и раскрывает новые грани таланта."},{"title":"Заветное сбудется","message":"Пусть даже самое заветное, о чём Вы никому не говорили, обязательно сбудется."},{"title":"Творческие идеи","message":"Пусть каждая идея находит воплощение и радует результатом."},{"title":"Личные проекты","message":"Пусть находится время и на личные, самые важные Вам проекты."},{"title":"Свершения","message":"Пусть каждый год приносит свершения, которыми хочется делиться."},{"title":"Открытия","message":"Пусть каждый год дарит открытия — и о мире, и о себе."},{"title":"Планы на завтра","message":"Пусть планы на завтра всегда манят, а не пугают."},{"title":"Задачи по плечу","message":"Пусть все задачи, за которые Вы беретесь, всегда оказываются по плечу."},{"title":"Будущие проекты","message":"Пусть впереди много интересных проектов и красивых воплощений."},{"title":"Всё получится","message":"Пусть в жизни всегда живёт уверенность: получится."},{"title":"Реализация талантов","message":"Пусть все Ваши таланты находят применение и признание."},{"title":"Свежие идеи","message":"Пусть каждый день приносит хотя бы одну свежую, вдохновляющую мысль."},{"title":"Проекты жизни","message":"Пусть главные проекты жизни — семья, работа, дом — только процветают."},{"title":"Новые открытия","message":"Пусть впереди будет много новых открытий, поездок и впечатлений."},{"title":"Пути к цели","message":"Пусть путь к цели всегда будет интересным, а не изматывающим."},{"title":"Ясность целей","message":"Пусть цели всегда видны чётко, а средства к их достижению находятся легко."},{"title":"Смелость мечтать","message":"Пусть смелости мечтать всегда хватает — и даже с запасом."},{"title":"Свежие решения","message":"Пусть на любую задачу находится свежее и красивое решение."},{"title":"Большие свершения","message":"Пусть впереди будет много больших, значимых свершений."},{"title":"Уверенные шаги","message":"Пусть каждый шаг к цели будет уверенным и осмысленным."},{"title":"Прорывные идеи","message":"Пусть иногда приходят те самые идеи, которые меняют всё."},{"title":"Заслуженный успех","message":"Пусть успех приходит именно тогда, когда его ждут больше всего."},{"title":"Планы без преград","message":"Пусть на пути к целям не встречается непреодолимых преград."},{"title":"Вдохновляющие проекты","message":"Пусть каждый новый проект вдохновляет сильнее предыдущего."},{"title":"Смелые решения","message":"Пусть смелость принимать решения не покидает никогда."},{"title":"Реализованный потенциал","message":"Пусть весь потенциал находит применение и признание."},{"title":"Достижение мечты","message":"Пусть самая заветная мечта обязательно осуществится."},{"title":"Творческий подъём","message":"Пусть творческий подъём случается чаще творческого кризиса."},{"title":"Ясная цель","message":"Пусть цель всегда видна чётко, а дорога к ней — интересна."},{"title":"Успешные начинания","message":"Пусть каждое новое начинание оказывается успешным."},{"title":"Профессиональный рост","message":"Пусть профессиональный рост продолжается на радость всей команде."},{"title":"Смелые перемены","message":"Пусть перемены, которые Вы задумываете, всегда идут на пользу."},{"title":"Достойное признание","message":"Пусть заслуги всегда находят достойное признание."},{"title":"Новые вершины покорены","message":"Пусть каждая покорённая вершина открывает вид на следующую."},{"title":"Идеи воплощаются","message":"Пусть каждая хорошая идея находит дорогу к воплощению."},{"title":"Уверенное будущее","message":"Пусть будущее видится уверенным и светлым."},{"title":"Смелые начинания","message":"Пусть смелость начинать новое остаётся с Вами всегда."},{"title":"Плоды труда","message":"Пусть плоды многолетнего труда приносят радость и гордость."},{"title":"Заслуженные лавры","message":"Пусть заслуженные лавры находят Вас чаще, чем Вы их ищете."},{"title":"Творческая свобода","message":"Пусть в работе всегда остаётся место для творческой свободы."},{"title":"Успешный год","message":"Пусть каждый новый год жизни будет успешнее предыдущего."},{"title":"Реализация идей","message":"Пусть ни одна хорошая идея не останется нереализованной."},{"title":"Достигнутые цели","message":"Пусть список достигнутых целей растёт быстрее списка задуманных."},{"title":"Новые свершения","message":"Пусть новый год жизни принесёт как минимум одно большое свершение."}]'>✿</button>
+            <button class="flower-btn f5" type="button" data-wishes='[{"title":"Тепло в душе","message":"Пусть всё добро, которое Вы отдаёте людям, возвращается к Вам заботой, уважением и светом."},{"title":"Душевное равновесие","message":"Пусть на душе всегда будет спокойно и тепло, что бы ни происходило вокруг."},{"title":"Внутренняя гармония","message":"Пусть внутри всегда живёт ощущение, что всё в жизни на своих местах."},{"title":"Доброта в ответ","message":"Пусть доброта, которую Вы дарите миру, возвращается к Вам многократно."},{"title":"Тихое счастье","message":"Пусть в жизни будет много тихих, спокойных моментов настоящего счастья."},{"title":"Умиротворение","message":"Пусть даже в самые беспокойные дни находится минута для умиротворения."},{"title":"Свет в сердце","message":"Пусть свет, который Вы несёте людям, никогда не гаснет в Вашем собственном сердце."},{"title":"Внутренняя опора","message":"Пусть внутренняя опора всегда будет надёжной — как та, что Вы создаёте для нас."},{"title":"Спокойствие в бурю","message":"Пусть Ваше знаменитое спокойствие в бурю всегда возвращается к Вам добром."},{"title":"Философский взгляд","message":"Пусть находится в жизни место и философскому взгляду на любые события."},{"title":"Тепло души","message":"Пусть тепло Вашей души согревает и её саму."},{"title":"Радость дарить","message":"Пусть радость дарить радость никогда не иссякает."},{"title":"Мир в сердце","message":"Пусть в сердце всегда живёт мир — тот самый, который Вы приносите нам."},{"title":"Спокойная радость","message":"Пусть радость будет спокойной и глубокой, а не поверхностной и мимолётной."},{"title":"Свет и любовь","message":"Пусть жизнь наполняется светом и любовью — как чашка ароматного чая теплом."},{"title":"Ясность души","message":"Пусть душа всегда остаётся ясной, а сердце — открытым."},{"title":"Место для нежности","message":"Пусть в самом плотном графике всегда есть место нежности — к близким и к себе."},{"title":"Тихая уверенность","message":"Пусть уверенность будет тихой, но непоколебимой."},{"title":"Достоинство","message":"Пусть чувство достоинства всегда идёт с Вами рядом — как верный друг."},{"title":"Внутренняя красота","message":"Пусть внутренняя красота, которая делает Вас особенной, только расцветает."},{"title":"Свет женственности","message":"Пусть женственность всегда будет Вашей суперсилой."},{"title":"Мудрость сердца","message":"Пусть сердце всегда подсказывает правильные решения."},{"title":"Спокойная мудрость","message":"Пусть мудрость приходит спокойно, а не через боль."},{"title":"Место для себя","message":"Пусть в жизни всегда остаётся место для себя — только для себя."},{"title":"Внутренний огонь","message":"Пусть внутренний огонь никогда не гаснет — только становится ярче."},{"title":"Тёплые воспоминания","message":"Пусть воспоминания всегда согревают, а не грустят."},{"title":"Гармония со временем","message":"Пусть каждый прожитый год приносит гармонию, а не тревогу."},{"title":"Уют внутри","message":"Пусть внутренний уют будет таким же ощутимым, как уют в Вашем кабинете."},{"title":"Дар присутствия","message":"Пусть Ваш редкий дар — быть рядом сердцем — сохраняется на долгие годы."},{"title":"Свет благородства","message":"Пусть благородство останется Вашей визитной карточкой."},{"title":"Тихая мудрость","message":"Пусть мудрость помогает выбирать битвы, а сердце — правильные ответы."},{"title":"Богатство души","message":"Пусть богатство души только приумножается."},{"title":"Свет доброты","message":"Пусть доброта никогда не воспринимается как слабость."},{"title":"Живая душа","message":"Пусть душа всегда остаётся живой, отзывчивой и молодой."},{"title":"Гармония с собой","message":"Пусть внутренняя гармония остаётся Вашим естественным состоянием."},{"title":"Спокойная сила","message":"Пусть сила всегда остаётся спокойной, а не показной."},{"title":"Мудрое сердце","message":"Пусть сердце подсказывает верные решения в любых обстоятельствах."},{"title":"Внутренний свет","message":"Пусть внутренний свет освещает путь и Вам, и всем, кто рядом."},{"title":"Душевная теплота","message":"Пусть душевная теплота остаётся Вашей главной суперсилой."},{"title":"Спокойная уверенность","message":"Пусть уверенность всегда будет спокойной и естественной."},{"title":"Внутренний стержень","message":"Пусть внутренний стержень остаётся таким же крепким, как сейчас."},{"title":"Тихая радость","message":"Пусть тихая, ненавязчивая радость сопровождает каждый день."},{"title":"Душевное тепло","message":"Пусть тепло души согревает и Вас саму, а не только окружающих."},{"title":"Мудрое спокойствие","message":"Пусть мудрое спокойствие остаётся Вашей отличительной чертой."},{"title":"Свет доброты","message":"Пусть свет доброты, который Вы несёте, никогда не меркнет."},{"title":"Внутренняя сила","message":"Пусть внутренняя сила помогает справляться с любыми трудностями."},{"title":"Гармония с миром","message":"Пусть жизнь всегда находится в гармонии с Вашими ценностями."},{"title":"Спокойная радость","message":"Пусть радость приходит спокойно, глубоко и надолго."},{"title":"Душевная щедрость","message":"Пусть душевная щедрость возвращается к Вам с процентами."},{"title":"Внутренний покой","message":"Пусть внутренний покой не покидает даже в самые бурные дни."},{"title":"Мудрое сердце","message":"Пусть сердце остаётся мудрым, а разум — добрым."},{"title":"Тёплый взгляд","message":"Пусть взгляд остаётся таким же тёплым и внимательным всегда."},{"title":"Душевная стойкость","message":"Пусть душевная стойкость помогает переживать любые бури."},{"title":"Внутренняя опора","message":"Пусть внутренняя опора остаётся крепкой независимо от обстоятельств."},{"title":"Свет в глазах","message":"Пусть свет в глазах не гаснет никогда."},{"title":"Спокойное сердце","message":"Пусть сердце остаётся спокойным, даже когда вокруг шумно."},{"title":"Душевная ясность","message":"Пусть в душе всегда царит ясность, а не смятение."},{"title":"Тёплая душа","message":"Пусть душевное тепло остаётся таким же щедрым долгие годы."},{"title":"Внутренняя тишина","message":"Пусть внутренняя тишина помогает находить верные решения."},{"title":"Мудрость и доброта","message":"Пусть мудрость и доброта идут рядом, рука об руку."},{"title":"Свет внутреннего мира","message":"Пусть внутренний мир остаётся светлым и наполненным."}]'>✿</button>
+            <button class="flower-btn f6" type="button" data-wishes='[{"title":"Спасибо","message":"Спасибо Вам за мудрость, человечность, поддержку и за ту атмосферу, которую Вы создали вокруг себя."},{"title":"Благодарность","message":"Спасибо за то, что Вы всегда рядом — в радости и в трудную минуту."},{"title":"За веру в нас","message":"Спасибо за то, что помогаете каждому из нас поверить в свои силы."},{"title":"За перемены","message":"Спасибо за ту эпоху перемен, которую Вы подарили нашему коллективу."},{"title":"За заботу","message":"Спасибо за заботу, которая ощущается в каждой мелочи и каждом решении."},{"title":"За вдохновение","message":"Спасибо, что вдохновляете нас становиться лучше каждый день."},{"title":"За всё","message":"Спасибо Вам. Просто за то, что Вы есть — такая, какая есть."},{"title":"За доверие","message":"Спасибо за доверие — оно вдохновляет двигаться вперёд."},{"title":"За справедливость","message":"Спасибо за требовательность, которая всегда была справедливой."},{"title":"За поддержку","message":"Спасибо за поддержку, которая ощущалась даже без слов."},{"title":"За тепло","message":"Спасибо за тепло, которое Вы дарите всем, кто рядом."},{"title":"За понимание","message":"Спасибо за то, что Вы всегда понимаете нас."},{"title":"За мудрые решения","message":"Спасибо за все мудрые решения, которые вели нас вперёд."},{"title":"За терпение","message":"Спасибо за терпение, с которым Вы принимаете нас — со всеми нашими особенностями."},{"title":"За требовательность","message":"Спасибо за то, что не даёте расслабиться — и правильно делаете."},{"title":"За возможности","message":"Спасибо за возможности, которые Вы дарите каждому из нас."},{"title":"За рост","message":"Спасибо за то, что позволяете нам расти рядом с Вами."},{"title":"За веру","message":"Спасибо за то, что верите в каждого — даже когда мы сами в себе сомневаемся."},{"title":"За честность","message":"Спасибо за прямоту и честность в разговорах — с этим было бы трудно ошибиться."},{"title":"За знания","message":"Спасибо за всё, чему Вы нас научили — и продолжаете учить."},{"title":"За семью","message":"Спасибо за то, что создали из нас не команду, а семью."},{"title":"За работу мечты","message":"Спасибо за то, что рабочее место превратили в место, куда хочется приходить."},{"title":"За юмор","message":"Спасибо за юмор, который спасал нас в самые непростые дни."},{"title":"За твёрдость","message":"Спасибо за твёрдость, с которой Вы отстаиваете наши интересы."},{"title":"За честь","message":"Спасибо за честь работать рядом с Вами."},{"title":"За стабильность","message":"Спасибо за спокойствие, которое передаётся всей команде."},{"title":"За науку жизни","message":"Спасибо за уроки, которые уносим не только с работы, но и по жизни."},{"title":"За человечность","message":"Спасибо за человечность в мире, где её так не хватает."},{"title":"За то, что рядом","message":"Спасибо за каждый день, когда Вы просто рядом с нами."},{"title":"За смелость","message":"Спасибо за смелость идти туда, куда другие боятся."},{"title":"За авторитет","message":"Спасибо за авторитет, который никогда не давит, а всегда поддерживает."},{"title":"За плечо","message":"Спасибо за плечо, которое всегда рядом."},{"title":"За «спасибо»","message":"Спасибо за то, что учите нас говорить «спасибо» друг другу."},{"title":"За настоящую эпоху","message":"Спасибо за настоящую эпоху перемен. Эпоху, которую создали Вы. Для нас, вместе с нами и благодаря нам."},{"title":"За надёжность","message":"Спасибо за надёжность, на которую всегда можно положиться."},{"title":"За открытость","message":"Спасибо за открытость и готовность выслушать каждого."},{"title":"За пример","message":"Спасибо за то, что являетесь примером для всей команды."},{"title":"За энергию","message":"Спасибо за энергию, которой Вы заряжаете весь коллектив."},{"title":"За внимание","message":"Спасибо за внимание к каждому, даже в самые загруженные дни."},{"title":"За решительность","message":"Спасибо за решительность, которая помогает нам двигаться вперёд."},{"title":"За искренность","message":"Спасибо за искренность — с Вами всегда понятно, где мы находимся."},{"title":"За заботу о деталях","message":"Спасибо за внимание к деталям, которое делает нашу работу лучше."},{"title":"За уроки","message":"Спасибо за уроки, которые остаются с нами на всю жизнь."},{"title":"За командный дух","message":"Спасибо за командный дух, который Вы создали вокруг себя."},{"title":"За веру в лучшее","message":"Спасибо за то, что всегда верите в лучший исход."},{"title":"За стойкость","message":"Спасибо за стойкость, которая вдохновляет не сдаваться."},{"title":"За щедрость","message":"Спасибо за щедрость — душевную и в делах."},{"title":"За терпеливость","message":"Спасибо за терпение, с которым Вы объясняете и направляете."},{"title":"За открытые двери","message":"Спасибо за то, что дверь Вашего кабинета всегда открыта."},{"title":"За доброе слово","message":"Спасибо за доброе слово, которое находится для каждого."},{"title":"За пример стойкости","message":"Спасибо за пример того, как оставаться собой в любых обстоятельствах."},{"title":"За настоящую заботу","message":"Спасибо за настоящую, неподдельную заботу о каждом из нас."},{"title":"За крепкий тыл","message":"Спасибо, что стали для нас крепким тылом в любой ситуации."},{"title":"За веру в команду","message":"Спасибо за то, что верите в команду больше, чем она порой верит в себя."},{"title":"За ценные уроки","message":"Спасибо за ценные уроки жизни и профессии."},{"title":"За искренние слова","message":"Спасибо за слова, которые всегда попадают точно в сердце."},{"title":"За тепло в трудный день","message":"Спасибо за тепло, которое находится даже в самый трудный день."},{"title":"За настоящее лидерство","message":"Спасибо за лидерство, которое ведёт, а не давит."},{"title":"За веру в перемены","message":"Спасибо за веру в то, что перемены — это всегда к лучшему."},{"title":"За то, что Вы есть","message":"Спасибо просто за то, что Вы есть в жизни каждого из нас."}]'>✿</button>
+          </div>
+
+          <div class="bouquet-shadow" aria-hidden="true"></div>
+          <div class="vase" aria-hidden="true"></div>
+        </div>
+
+        <div class="wish-panel">
+          <h3 id="wishTitle">Свет и радость</h3>
+          <p id="wishText">Пусть каждый новый день приносит Вам тепло, вдохновение и ощущение внутренней гармонии.</p>
+        </div>
+
+        <div class="bouquet-caption">Нажми на цветок ещё раз — получишь новое пожелание. Ровно 365 — по одному на каждый день до следующего дня рождения.</div>
+      </div>
+    </section>
+
+    <section class="spread photo-essay" id="team-photo">
+      <div class="section-no">10</div>
+      <div class="pad">
+        <span class="kicker">Photo essay · Кадр номера</span>
+        <h2>Мы — рядом с Вами</h2>
+        <p class="essay-lead">Тот самый коллектив, о котором эта история. Тот самый коллектив, который Вы вырастили.</p>
+
+        <figure class="essay-figure">
+          <img src="8.jpg" alt="Общее фото коллектива МФЦ с Ириной Александровной" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <div class="essay-placeholder" style="display:none;">
+            <span class="n">08</span>
+            <span class="l">Общее фото коллектива</span>
+          </div>
+        </figure>
+
+        <figcaption>
+          «Каждый на этом фото — благодаря Вам стал чуть лучше, увереннее, светлее.»
+          <span class="caption-meta">Коллектив МФЦ · Волжский район</span>
+        </figcaption>
+      </div>
+    </section>
+
+    <section class="spread card-section" id="birthday-card">
+      <div class="section-no">11</div>
+      <div class="pad">
+        <div class="kicker">Открытка от коллектива</div>
+        <h2>Одна открытка. Один читатель.</h2>
+        <p class="card-intro">Мы её собрали для одного-единственного человека на свете. Нажмите — и она раскроется.</p>
+
+        <div class="postcard-scene">
+          <div class="postcard" id="postcard" onclick="this.classList.toggle('open')">
+
+            <!-- Лицевая сторона -->
+            <div class="postcard-face postcard-cover">
+              <svg class="pc-corner tl" viewBox="0 0 40 40" aria-hidden="true">
+                <path d="M2 20 Q2 2 20 2" fill="none" stroke="currentColor" stroke-width="1"/>
+                <path d="M8 20 Q8 8 20 8" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.6"/>
+                <circle cx="20" cy="2" r="1.5" fill="currentColor"/>
+                <circle cx="2" cy="20" r="1.5" fill="currentColor"/>
+              </svg>
+              <svg class="pc-corner tr" viewBox="0 0 40 40" aria-hidden="true">
+                <path d="M2 20 Q2 2 20 2" fill="none" stroke="currentColor" stroke-width="1"/>
+                <path d="M8 20 Q8 8 20 8" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.6"/>
+                <circle cx="20" cy="2" r="1.5" fill="currentColor"/>
+                <circle cx="2" cy="20" r="1.5" fill="currentColor"/>
+              </svg>
+              <svg class="pc-corner bl" viewBox="0 0 40 40" aria-hidden="true">
+                <path d="M2 20 Q2 2 20 2" fill="none" stroke="currentColor" stroke-width="1"/>
+                <path d="M8 20 Q8 8 20 8" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.6"/>
+                <circle cx="20" cy="2" r="1.5" fill="currentColor"/>
+                <circle cx="2" cy="20" r="1.5" fill="currentColor"/>
+              </svg>
+              <svg class="pc-corner br" viewBox="0 0 40 40" aria-hidden="true">
+                <path d="M2 20 Q2 2 20 2" fill="none" stroke="currentColor" stroke-width="1"/>
+                <path d="M8 20 Q8 8 20 8" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.6"/>
+                <circle cx="20" cy="2" r="1.5" fill="currentColor"/>
+                <circle cx="2" cy="20" r="1.5" fill="currentColor"/>
+              </svg>
+
+              <div class="pc-eyebrow">К Дню Рождения</div>
+              <div class="pc-name">Ирине Александровне</div>
+              <div class="pc-surname">Мельник</div>
+              <div class="pc-flourish">❦</div>
+              <div class="pc-hint">Нажмите, чтобы открыть</div>
+            </div>
+
+            <!-- Внутренняя сторона -->
+            <div class="postcard-face postcard-inside">
+              <!-- Декоративная виньетка сверху -->
+              <svg class="pi-vignette" viewBox="0 0 200 40" aria-hidden="true">
+                <line x1="10" y1="20" x2="80" y2="20" stroke="#b8923d" stroke-width="0.8"/>
+                <line x1="120" y1="20" x2="190" y2="20" stroke="#b8923d" stroke-width="0.8"/>
+                <path d="M 100 8 L 103 17 L 112 20 L 103 23 L 100 32 L 97 23 L 88 20 L 97 17 Z" fill="#b8923d"/>
+                <circle cx="100" cy="20" r="2" fill="#faf3e0"/>
+                <circle cx="82" cy="20" r="1.5" fill="#b8923d"/>
+                <circle cx="118" cy="20" r="1.5" fill="#b8923d"/>
+                <circle cx="72" cy="20" r="0.8" fill="#b8923d" opacity="0.6"/>
+                <circle cx="128" cy="20" r="0.8" fill="#b8923d" opacity="0.6"/>
+              </svg>
+
+              <div class="pi-greeting">Дорогая Ирина Александровна!</div>
+
+              <p class="pi-text">
+                Сегодня — Ваш день. Хочется сказать много и сразу, но пусть эти строки скажут за нас.
+              </p>
+              <p class="pi-text">
+                Спасибо за каждое утро, за доверие, за мудрость и за ту атмосферу, которую Вы создали вокруг себя.
+              </p>
+              <p class="pi-text">
+                Пусть новый год Вашей жизни будет самым светлым — на здоровье, любовь и радость.
+              </p>
+
+              <div class="pi-signoff">С Днём Рождения!</div>
+              <div class="pi-signature">— Ваш коллектив МФЦ</div>
+
+              <!-- Печать с датой -->
+              <div class="pi-seal" aria-hidden="true">
+                <span class="seal-star">✦</span>
+                <div class="seal-date">
+                  <b>08.07</b>
+                  <span>2026</span>
+                </div>
+                <span class="seal-star">✦</span>
+              </div>
+
+              <!-- Золотые точки-конфетти -->
+              <span class="pi-spark s1"></span>
+              <span class="pi-spark s2"></span>
+              <span class="pi-spark s3"></span>
+              <span class="pi-spark s4"></span>
+              <span class="pi-spark s5"></span>
+            </div>
+
+          </div>
+        </div>
+
+        <p class="card-hint">❦ Нажмите ещё раз, чтобы закрыть ❦</p>
+      </div>
+    </section>
+
+    <section class="spread footer-cover" id="final">
+      <div class="overlay">
+        <span>От всего коллектива МФЦ</span>
+        <h1>Самое главное хочется сказать в конце</h1>
+        <p>Вы — человек, рядом с которым становится теплее.</p>
+      </div>
+    </section>
+
+    <section class="spread section voices" id="voices">
+      <div class="section-no">12</div>
+      <div class="pad">
+        <div class="kicker">Голоса коллектива</div>
+        <h2>Своими словами</h2>
+        <p class="voices-lead">Мы не стали переписывать эти слова гладким редакторским языком. Пусть они прозвучат так, как их произнесли — от сердца.</p>
+
+        <div class="voice-carousel" id="voiceCarousel">
+
+          <div class="voice-slide">
+            <div class="voice">
+              <div class="voice-text">
+                <p>
+                  Дорогая Ирина Александровна, вы для меня «Волшебница или Фея Крестная»! Вы видите в людях достойные качества, профессионализм и боретесь за достойную оплату их труда! Улучшаете условия работы!
+                </p>
+                <p>
+                  Вы сделали много открытий, как «научный исследователь», открыли много вакансий, отделов и новых отделений! «Решатель многих задач» — от многочисленного коллектива до души отдельно взятого сотрудника-личности.
+                </p>
+                <p>
+                  Несмотря на ваш серьёзный взгляд, выслушав, вам удаётся успокоить и дать верный совет, направить действия в нужное русло! Вы борец! И пример для нас! Здоровья на многие лета!
+                </p>
+              </div>
+              <div class="voice-author">— Антонина Мироненко</div>
+            </div>
+          </div>
+
+          <div class="voice-slide">
+            <div class="voice">
+              <div class="voice-text">
+                <p>
+                  «Своих не бросаем!» — этот девиз очень точно описывает нашего глубокоуважаемого директора! Ирина Александровна искренне переживает за каждого сотрудника и готова помочь не только в рабочей, но и любой трудной жизненной ситуации! Не просто директор — Человек с большой буквы!
+                </p>
+              </div>
+              <div class="voice-author">— Малина Е.Н.</div>
+            </div>
+          </div>
+
+          <div class="voice-slide">
+            <div class="voice">
+              <div class="voice-text">
+                <p>
+                  Ирина Александровна — руководитель, которая сочетает профессиональные навыки с личностными качествами. Она хорошо чувствует настроение команды, умеет слушать. Это помогает мотивировать людей, предотвращать конфликты и создавать в коллективе атмосферу доверия.
+                </p>
+                <p>
+                  В быстро меняющихся условиях она не цепляется за устаревшие методы, а ищет новые пути, готова менять тактику. При этом она умеет видеть картину в целом, ставить долгосрочные цели, но при этом не упускает из виду нюансы, которые могут повлиять на результат.
+                </p>
+                <p>
+                  Она не просто раздаёт задачи, а развивает потенциал сотрудников: помогает раскрывать сильные стороны, делится знаниями, создаёт условия для роста. Многим женщинам приходится совмещать разные роли — работа, семья, — и это развивает навык эффективно распределять внимание и ресурсы.
+                </p>
+                <p>
+                  Для неё важно не только добиваться результатов, но и сохранять ресурс, чтобы не выгорать. Иногда она внедряет гибкие форматы — удалёнку, гибкий график — чтобы помочь и себе, и команде. При этом в критических ситуациях она способна проявить и твёрдость, и решительность.
+                </p>
+                <p>
+                  Ирина Александровна — пример того, как можно оставаться яркой, женственной и при этом оставаться сильным, эффективным руководителем.
+                </p>
+              </div>
+              <div class="voice-author">— Низина Е.А.</div>
+            </div>
+          </div>
+
+          <div class="voice-slide">
+            <div class="voice">
+              <div class="voice-text">
+                <p>
+                  Вы для меня — образец целеустремлённости, мудрости и преданности своему делу. Ваша способность вдохновлять коллектив на достижение высоких результатов, умение находить нестандартные решения и поддерживать позитивную атмосферу в коллективе — это те качества, которые делают Вас не только успешным руководителем, но и замечательным человеком.
+                </p>
+              </div>
+              <div class="voice-author">— Захарова М.А.</div>
+            </div>
+          </div>
+
+          <div class="voice-slide">
+            <div class="voice">
+              <div class="voice-text">
+                <p>
+                  Ирина Александровна — хороший руководитель, человек, умеющий вдохновлять команду. Она поддерживает сотрудников, создаёт комфортную, рабочую атмосферу, и каждый сотрудник чувствует себя ценным и важным.
+                </p>
+              </div>
+              <div class="voice-author">— Кизельбашева Н.В.</div>
+            </div>
+          </div>
+
+          <div class="voice-slide">
+            <div class="voice">
+              <div class="voice-text">
+                <p>
+                  Уважаемая Ирина Александровна! От имени всего коллектива отделения №1 (микрорайон Южный город) примите самые искренние поздравления с Днём рождения!
+                </p>
+                <p>
+                  В этот замечательный день мы хотим выразить Вам глубокую признательность за Ваш профессионализм, мудрость, ответственность и преданность своему делу. Благодаря Вашему грамотному руководству наш коллектив уверенно развивается, успешно справляется с самыми сложными задачами и ежедневно оказывает качественную помощь людям.
+                </p>
+                <p>
+                  Мы ценим Вас не только как сильного и дальновидного руководителя, но и как человека с большим сердцем. Ваше умение слышать и понимать людей, поддерживать в трудную минуту, создавать атмосферу взаимного уважения и доверия вызывает искреннее восхищение и благодарность.
+                </p>
+                <p>
+                  От всей души желаем Вам крепкого здоровья, счастья, семейного благополучия, душевной гармонии, неиссякаемой энергии и новых профессиональных достижений. Пусть каждый день приносит радость, новые возможности и заслуженное признание.
+                </p>
+              </div>
+              <div class="voice-author">— Отделение №1, мкрн. Южный город</div>
+            </div>
+          </div>
+
+          <div class="voice-slide">
+            <div class="voice">
+              <div class="voice-text">
+                <p>
+                  Уважаемая Ирина Александровна! Примите наши искренние поздравления с днём рождения! Вы являетесь для нас примером не только эффективного руководителя, но и замечательной женщины, которая задаёт высокую планку и с лёгкостью её берёт.
+                </p>
+                <p>
+                  От всей души хотим пожелать Вам прочного здоровья как основы для личного счастья, а также неиссякаемого вдохновения для новых свершений и профессионального роста. Пусть каждый трудовой день приносит отличные результаты и заслуженное признание, а в семейном кругу царят тепло, забота и взаимопонимание.
+                </p>
+                <p>
+                  Желаем Вам больше ярких впечатлений от путешествий, встреч с близкими и любимых увлечений. Сохраняйте свой энтузиазм, пусть Вас окружает добро, а любой новый шаг ведёт к благополучию и дарит радость!
+                </p>
+              </div>
+              <div class="voice-author">— Отдел приёма граждан и выдачи документов</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="voice-dots" id="voiceDots"></div>
+        <p class="voice-hint">← Листайте, чтобы прочитать все поздравления →</p>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    (function () {
+      const buttons = document.querySelectorAll('.flower-btn');
+      const title = document.getElementById('wishTitle');
+      const text = document.getElementById('wishText');
+      const panel = document.querySelector('.wish-panel');
+
+      // Каждый цветок хранит массив пожеланий и текущий индекс
+      buttons.forEach((btn) => {
+        try {
+          btn.wishList = JSON.parse(btn.dataset.wishes || '[]');
+        } catch (e) {
+          btn.wishList = [];
+        }
+        btn.wishIndex = 0;
+      });
+
+      function showWish(btn) {
+        if (!btn.wishList || btn.wishList.length === 0) return;
+        const w = btn.wishList[btn.wishIndex];
+        // Плавная смена
+        if (panel) {
+          panel.style.transition = 'opacity 0.25s ease';
+          panel.style.opacity = '0';
+          setTimeout(() => {
+            title.textContent = w.title || '';
+            text.textContent = w.message || '';
+            panel.style.opacity = '1';
+          }, 250);
+        } else {
+          title.textContent = w.title || '';
+          text.textContent = w.message || '';
+        }
+        // Следующее пожелание для этого цветка
+        btn.wishIndex = (btn.wishIndex + 1) % btn.wishList.length;
+      }
+
+      buttons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          buttons.forEach((b) => b.classList.remove('active'));
+          btn.classList.add('active');
+          showWish(btn);
+        });
+      });
+    })();
+
+    // ===== Карусель "Голоса коллектива" =====
+    (function () {
+      const carousel = document.getElementById('voiceCarousel');
+      const dotsWrap = document.getElementById('voiceDots');
+      if (!carousel || !dotsWrap) return;
+
+      const slides = Array.from(carousel.querySelectorAll('.voice-slide'));
+      const cards = slides.map((s) => s.querySelector('.voice'));
+
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'voice-dot' + (i === 0 ? ' active' : '');
+        dot.type = 'button';
+        dot.setAttribute('aria-label', 'Поздравление ' + (i + 1));
+        dot.addEventListener('click', () => {
+          slides[i].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        });
+        dotsWrap.appendChild(dot);
+      });
+
+      const dots = Array.from(dotsWrap.querySelectorAll('.voice-dot'));
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.6) {
+            const idx = slides.indexOf(entry.target);
+            dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+            slides.forEach((s, i) => s.classList.toggle('is-active', i === idx));
+          }
+        });
+      }, { root: carousel, threshold: [0.6] });
+
+      slides.forEach((slide) => observer.observe(slide));
+
+      // 3D-параллакс: карточки по бокам уменьшаются, теряют яркость и слегка "уходят вглубь"
+      let ticking = false;
+      function updateParallax() {
+        const carouselRect = carousel.getBoundingClientRect();
+        const centerX = carouselRect.left + carouselRect.width / 2;
+
+        slides.forEach((slide, i) => {
+          const card = cards[i];
+          if (!card) return;
+          const rect = slide.getBoundingClientRect();
+          const slideCenterX = rect.left + rect.width / 2;
+          const distance = (slideCenterX - centerX) / carouselRect.width;
+          const clamped = Math.max(-1, Math.min(1, distance));
+
+          const scale = 1 - Math.abs(clamped) * 0.16;
+          const opacity = 1 - Math.abs(clamped) * 0.55;
+          const rotateY = clamped * -14;
+          const translateZ = -Math.abs(clamped) * 60;
+
+          card.style.transform =
+            'perspective(1400px) rotateY(' + rotateY + 'deg) scale(' + scale + ') translateZ(' + translateZ + 'px)';
+          card.style.opacity = String(Math.max(0.35, opacity));
+        });
+        ticking = false;
+      }
+
+      function onScroll() {
+        if (!ticking) {
+          requestAnimationFrame(updateParallax);
+          ticking = true;
+        }
+      }
+
+      carousel.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', updateParallax);
+      updateParallax();
+    })();
+  </script>
+</body>
+</html>
